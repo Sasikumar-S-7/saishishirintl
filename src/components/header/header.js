@@ -1,6 +1,6 @@
 'use client';
 import React from 'react';
-
+import Image from "next/image";
 const Header = () => {
   return (
     <header className="header-container border-bottom bg-white py-2">
@@ -13,7 +13,6 @@ const Header = () => {
             className="brand-logo"
           />
         </div>
-
         {/* Call Button */}
         <div>
           <a href="tel:+918951062993" className="call-button d-flex align-items-center">

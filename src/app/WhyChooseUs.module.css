@@ -1,13 +1,13 @@
 /* WhyChooseUs.module.css */
 
-.whyChooseSection {
+.whychoosesection {
   background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%);
   position: relative;
   overflow: hidden;
   padding: 80px 0;
 }
 
-.whyChooseSection::before {
+.whychoosesection::before {
   content: '';
   position: absolute;
   top: 0;
@@ -220,7 +220,7 @@
 }
 
 @media (max-width: 768px) {
-  .whyChooseSection {
+  .whychoosesection {
     padding: 60px 0 !important;
   }
   
