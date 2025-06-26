@@ -1,42 +1,164 @@
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
-}
-
-html,
+@import url('https://fonts.googleapis.com/css2?family=LXGW+Marker+Gothic&family=Lobster&display=swap');
 body {
-  max-width: 100vw;
-  overflow-x: hidden;
-}
-
-body {
-  color: var(--foreground);
-  background: var(--background);
-  font-family: Arial, Helvetica, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-}
-
-* {
-  box-sizing: border-box;
-  padding: 0;
+  font-family: 'Segoe UI', sans-serif;
   margin: 0;
+  padding: 0;
 }
 
-a {
-  color: inherit;
+.brand-logo {
+  height: 50px;
+  max-width: 100%;
+  transition: height 0.3s ease;
+}
+
+.blue-brand-color {
+  color: #0b4878;
+}
+.orange-brand-color {
+  color: #ff9f26;
+}
+.blue-brand-bg-color {
+  background-color: #0b4878;
+}
+.orange-brand-bg-color {
+  background-color: #ff9f26;
+}
+
+
+.call-button {
+  padding: 3px 17px;
+  border: 2px solid #0b4878;
+  border-radius: 40px;
+  color: #0b4878;
+  font-size: 1rem;
   text-decoration: none;
+  transition: all 0.3s ease;
+  white-space: nowrap;
 }
 
-@media (prefers-color-scheme: dark) {
-  html {
-    color-scheme: dark;
+.call-button i {
+  font-size: 1.2rem;
+  color: #0b4878;
+  transition: color 0.3s ease;
+}
+
+.call-button:hover {
+  background-color: #0b4878;
+  color: #fff;
+}
+
+.call-button:hover i {
+  color: #fff;
+}
+
+/* Responsive media queries */
+@media (max-width: 768px) {
+  .brand-logo {
+    height: 40px;
   }
+
+  .call-button {
+    padding: 6px 14px;
+    font-size: 0.9rem;
+  }
+
+  .call-button i {
+    font-size: 1rem;
+  }
+   .keyword-title {
+    font-size: 18px !important;
+    
+}
+.package-title {
+  font-size: 85px !important;
+}
+}
+
+@media (max-width: 480px) {
+  .brand-logo {
+    height: 36px;
+  }
+
+  .call-button {
+    padding: 5px 10px;
+    font-size: 0.85rem;
+  }
+
+  .call-button i {
+    font-size: 0.95rem;
+  }
+  .keyword-title {
+    font-size: 18px !important;
+    
+}
+.package-title {
+  font-size: 95px !important;
+}
+}
+
+.blue-brand-color {
+  color: #0b4878;
+}
+
+.orange-brand-color {
+  color: #ff9f26;
+}
+
+.footer-container {
+  background-color: #f8f9fa;
+}
+
+.footer-logo {
+  height: 50px;
+}
+
+@media (max-width: 576px) {
+  .footer-logo {
+    height: 40px;
+  }
+}
+.main-banner {
+  background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.1)), url("/bhutan-banner.jpg");
+  background-size: cover;
+  background-position: center;
+  min-height: 500px;
+}
+.amazing-title {
+  font-family: "LXGW Marker Gothic", sans-serif;
+  font-weight: 400;
+  font-size: 40px;
+  font-style: normal;
+  margin-bottom: -25px !important;
+}
+
+.amazing-title {
+  font-family: "Lobster", sans-serif;
+  font-weight: 400;
+    font-size: 40px;
+  font-style: normal;
+}
+.package-title {
+  font-family: 'Recoleta', 'Playfair Display', 'Georgia', serif;
+  font-size: 170px;
+  font-weight: bold;
+  line-height: 1.1;
+  letter-spacing: -0.5px;
+}
+
+.tour-type{
+    font-family: Poppins, sans-serif;
+    font-size: 45px;
+    font-weight: 600;
+    margin-top: -30px !important;
+   
+}
+.price-font{
+  font-family: Poppins, sans-serif;
+  font-size: 14px;
+  font-weight: 500;
+}
+.keyword-title{
+  font-family: Poppins, sans-serif;
+  font-size: 32px;
+  font-weight: 600;
 }

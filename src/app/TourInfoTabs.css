@@ -1,0 +1,161 @@
+/* TourInfoTabs.css */
+.tour-info-container {
+  max-width: 1200px;
+  margin: 2rem auto;
+  padding: 0 1rem;
+}
+
+.tour-info-header {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.tour-info-title {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  font-weight: 600;
+  color: #2c3e50;
+  margin-bottom: 0.5rem;
+}
+
+.title-icon {
+  color: #3b82f6;
+}
+
+.tour-info-subtitle {
+  color: #6b7280;
+  font-style: italic;
+  margin-bottom: 0;
+}
+
+.tour-info-card {
+  background: white;
+  border-radius: 0.5rem;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+}
+
+.card-body {
+  padding: 0;
+}
+
+.nav-tabs {
+  display: flex;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  border-bottom: 1px solid #e5e7eb;
+}
+
+.nav-item {
+  flex: 1;
+  text-align: center;
+}
+
+.nav-link {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  width: 100%;
+  padding: 1rem;
+  color: #6b7280;
+  border: none;
+  background: transparent;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.nav-link:hover {
+  color: #3b82f6;
+  background-color: rgba(59, 130, 246, 0.05);
+}
+
+.nav-link.active {
+  color: #3b82f6;
+  border-bottom: 3px solid #3b82f6;
+}
+
+.tab-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.tab-label {
+  font-size: 0.875rem;
+}
+
+.tab-content {
+  padding: 1.5rem;
+}
+
+.tab-content-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.tab-content-item {
+  display: flex;
+  align-items: flex-start;
+  margin-bottom: 1rem;
+}
+
+.item-icon {
+  margin-right: 0.75rem;
+  margin-top: 0.2rem;
+  color: #3b82f6;
+}
+
+.inline-icon {
+  vertical-align: middle;
+}
+
+.bullet-point {
+  color: #10b981;
+  font-weight: bold;
+}
+
+.item-text {
+  color: #4b5563;
+  flex: 1;
+}
+
+/* Responsive styles */
+@media (max-width: 768px) {
+  .nav-link {
+    padding: 0.75rem 0.5rem;
+    font-size: 0.8rem;
+  }
+  
+  .tab-content {
+    padding: 1rem;
+  }
+}
+
+@media (max-width: 576px) {
+  .nav-tabs {
+    flex-direction: column;
+    border-bottom: none;
+  }
+  
+  .nav-item {
+    border-bottom: 1px solid #e5e7eb;
+  }
+  
+  .nav-link {
+    flex-direction: row;
+    justify-content: flex-start;
+    padding: 0.75rem 1rem;
+    text-align: left;
+  }
+  
+  .tab-icon {
+    margin-right: 0.5rem;
+  }
+}

@@ -1,0 +1,55 @@
+
+.package-card {
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 0 12px rgba(0, 0, 0, 0.2);
+  position: relative;
+  background-color: #fff;
+  transition: transform 0.3s ease;
+}
+
+.package-card:hover {
+  transform: translateY(-5px);
+}
+
+.package-card img {
+  width: 100%;
+  height: 220px;
+  object-fit: cover;
+}
+
+.package-info {
+  position: absolute;
+  top: 15px;
+  left: 15px;
+  right: 15px;
+  color: #fff;
+  text-shadow: 0 0 3px #000;
+  z-index: 2;
+}
+
+.package-titles {
+  font-size: 1rem;
+  font-weight: 600;
+  margin-bottom: 2px;
+}
+
+.package-nights {
+  font-size: 0.9rem;
+}
+
+.label-strip {
+  background-color: #fdd835;
+  color: #000;
+  font-weight: 600;
+  text-align: center;
+  padding: 4px 0;
+  font-size: 0.85rem;
+}
+
+.price-block {
+  background: #000;
+  color: #fff;
+  padding: 10px;
+  font-size: 0.9rem;
+}

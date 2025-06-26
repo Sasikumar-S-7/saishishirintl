@@ -1,95 +1,57 @@
+'use client';
 import Image from "next/image";
-import styles from "./page.module.css";
+import Header from "@/components/header/header";
+import Footer from "@/components/footer/footer";
 
-export default function Home() {
+export default function HomePage() {
   return (
-    <div className={styles.page}>
-      <main className={styles.main}>
-        <Image
-          className={styles.logo}
-          src="/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
-        />
-        <ol>
-          <li>
-            Get started by editing <code>src/app/page.js</code>.
-          </li>
-          <li>Save and see your changes instantly.</li>
-        </ol>
+    <>
+      <Header />
 
-        <div className={styles.ctas}>
-          <a
-            className={styles.primary}
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className={styles.logo}
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
-            />
-            Deploy now
-          </a>
-          <a
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-            className={styles.secondary}
-          >
-            Read our docs
-          </a>
-        </div>
-      </main>
-      <footer className={styles.footer}>
-        <a
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
-          />
-          Learn
-        </a>
-        <a
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
-        </a>
-        <a
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
-      </footer>
-    </div>
+ {/* Fullscreen Hero with Overlay */}
+<div
+  className="hero-section d-flex flex-column justify-content-center align-items-center text-white text-center"
+  style={{
+    position: 'relative',
+    minHeight: '100vh',
+    backgroundImage: 'url(/full-shot-travel-concept-with-landmarks.jpg)',
+    backgroundSize: 'cover',
+    backgroundPosition: 'center',
+    backgroundRepeat: 'no-repeat',
+    width: '100%',
+  }}
+>
+  {/* Overlay */}
+  <div
+    style={{
+      position: 'absolute',
+      top: 0,
+      left: 0,
+      height: '100%',
+      width: '100%',
+      backgroundColor: 'rgba(0,0,0,0.5)', // dark transparent overlay
+      zIndex: 1,
+    }}
+  />
+
+  {/* Content */}
+  <div style={{ zIndex: 2 }} className="container px-3">
+    <p className="mt-5 fs-5">
+      This site hosts our marketing landing pages. Each page is designed for a specific audience or campaign.
+    </p>
+    <p className="fs-6">
+      If you’ve reached this page directly, you might want to check our main site or wait for a link from our team.
+    </p>
+    <p className="fw-semibold fs-5">-Team Sai Shishir Tours</p>
+    <a href="https://saishishirtours.in" className="btn orange-brand-bg-color mt-3 px-4 py-2 fw-semibold">
+      Visit Our Site
+    </a>
+  </div>
+</div>
+
+
+
+      <Footer />
+    </>
   );
 }
