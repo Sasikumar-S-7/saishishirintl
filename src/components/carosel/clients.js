@@ -70,12 +70,12 @@ const BaliCarousel = () => {
   return (
     <div className="container py-4">
         <div className='container'>
-            <h2 className='m-0 blue-brand-color fw-bold py-4 text-center'>Our Travelled Customers</h2>
+            <h2 className='fw-bold my-4 text-center display-4 fw-bold mb-3 WhyChooseUs-module__AIl1iW__sectionTitle WhyChooseUs-module__AIl1iW__fadeInUp'>Our Travelled Customers</h2>
         </div>
       <Slider {...settings}>
         {images.map((src, index) => (
           <div key={index} className="px-2">
-            <div className="carousel-image-wrapper">
+            <div className="carousel-image-wrapper py-5">
               <div 
                 className="image-wrapper"
                 onClick={() => openFullscreen(src)}

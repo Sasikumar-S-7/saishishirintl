@@ -1,6 +1,5 @@
 'use client';
 import React from 'react';
-import 'bootstrap/dist/js/bootstrap.bundle.min.js' // important for accordion toggle
 
 const FaqAccordion = () => {
   const faqItems = [

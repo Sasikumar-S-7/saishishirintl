@@ -1,84 +1,82 @@
 import React from 'react';
-import { 
-  Hotel, 
-  UserCheck, 
-  Utensils, 
-  DollarSign, 
-  Bus, 
-  Plane 
-} from 'lucide-react';
 
 const TourFeatures = () => {
   const features = [
     {
-      icon: Hotel,
-      title: 'Accommodation',
-      description: 'Comfortable & convenient hotels cherry picked by our hotel management team'
+      icon: 'bi-airplane',
+      title: 'Air fare',
+      description: 'Round-trip flights included from major Indian cities for hassle-free travel'
     },
     {
-      icon: UserCheck,
-      title: 'Tour managers',
-      description: 'We have an exclusive team of 350 tour managers specialising in India and World tours'
+      icon: 'bi-building',
+      title: 'Hotels',
+      description: 'Comfortable 3-4 star accommodations in prime locations for your convenience'
     },
     {
-      icon: Utensils,
-      title: 'All meals',
-      description: 'Eat to your heart\'s content Breakfast, Lunch, Dinner'
+      icon: 'bi-egg-fried',
+      title: 'Meals',
+      description: 'Daily breakfast, lunch, and dinner featuring local and international cuisines'
     },
     {
-      icon: DollarSign,
-      title: 'Best value itinerary',
-      description: 'Our dedicated product & destination research team spends hours curating the best value for money itineraries'
+      icon: 'bi-binoculars',
+      title: 'Site-seeing',
+      description: 'Guided visits to all major attractions and hidden gems at each destination'
     },
     {
-      icon: Bus,
-      title: 'On-tour transport',
-      description: 'Our itineraries include all rail, sea and road transport as part of the itinerary so you can enjoy tension free travel'
+      icon: 'bi-person-badge',
+      title: 'Tour Guide',
+      description: 'Experienced multilingual guides to enhance your travel experience'
     },
     {
-      icon: Plane,
-      title: 'To and fro airfare',
-      description: 'Versex World tours are inclusive of airfare from many hubs within India unless you pick the joining-leaving option'
+      icon: 'bi-bus-front',
+      title: 'Transportation',
+      description: 'Comfortable private coaches and transfers between all locations'
     }
   ];
 
   return (
     <div>
-      {/* Bootstrap 5 CSS */}
-      <link 
-        href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.2/css/bootstrap.min.css" 
-        rel="stylesheet" 
-      />
+      
+      
+      {/* Custom Brand Colors */}
+      <style>
+        {`
+          .blue-brand-color {
+            color: #0b4878;
+          }
+          .orange-brand-color {
+            color: #ff9f26;
+          }
+          .bg-blue-brand {
+            background-color: rgba(11, 72, 120, 0.1);
+          }
+        `}
+      </style>
       
       <section className="py-5 bg-light">
         <div className="container">
           <div className="row justify-content-center mb-4">
             <div className="col-12 text-center">
-              <h1 className="display-5 fw-bold mb-3">All inclusive tours, Chalo Bag Bharo Nikal Pado</h1>
+              <h1 className="display-5 fw-bold mb-3 blue-brand-color">All Inclusive Tours</h1>
+              <p className="lead orange-brand-color">Chalo Bag Bharo Nikal Pado!</p>
             </div>
           </div>
           
-          <div className="row">
-            {features.map((feature, index) => {
-              const IconComponent = feature.icon;
-              return (
-                <div key={index} className="col-md-6 col-lg-4 mb-4">
-                  <div className="h-100 p-4 bg-white rounded-3 shadow-sm">
-                    <div className="d-flex align-items-center mb-3">
-                      <div className="d-flex align-items-center justify-content-center bg-primary bg-opacity-10 rounded-circle me-3" 
-                           style={{ width: '64px', height: '64px', boxShadow: '0 4px 12px rgba(0, 0, 0, 0.15)' }}>
-                        <IconComponent 
-                          size={32} 
-                          className="text-primary"
-                        />
-                      </div>
-                      <h3 className="h5 mb-0">{feature.title}</h3>
-                    </div>
+          <div className="row g-4">
+            {features.map((feature, index) => (
+              <div key={index} className="col-md-6 col-lg-4">
+                <div className="h-100 p-4 bg-white rounded-3 shadow-sm d-flex align-items-start">
+                  <div className="d-flex align-items-center justify-content-center bg-blue-brand rounded-circle me-3" 
+                       style={{ width: '64px', height: '64px', flexShrink: 0 }}>
+                    <i className={`bi ${feature.icon} fs-3 orange-brand-color`}></i>
+                  </div>
+                  <div>
+                    <h3 className="h5 mb-2 blue-brand-color">{feature.title}</h3>
                     <p className="mb-0 text-muted">{feature.description}</p>
                   </div>
                 </div>
-              );
-            })}
+              </div>
+            ))}
           </div>
         </div>
       </section>

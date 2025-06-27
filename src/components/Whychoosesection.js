@@ -11,6 +11,7 @@ import {
   DollarSign, 
   Star 
 } from 'lucide-react';
+import Image from 'next/image';
 import styles from '../app/WhyChooseUs.module.css';
 
 export default function WhyChooseUsSection() {
@@ -97,8 +98,8 @@ export default function WhyChooseUsSection() {
               Why Choose Sai Shishir Tours?
             </h2>
             <p className={`lead ${styles.sectionSubtitle} ${isVisible ? styles.fadeInUp : ''}`}>
-              Experience the difference with India's most trusted travel partner. 
-              Here's what makes us stand out from the rest.
+              Experience the difference with Indias most trusted travel partner. 
+              Heres what makes us stand out from the rest.
             </p>
           </div>
         </div>
@@ -120,7 +121,7 @@ export default function WhyChooseUsSection() {
         </div>
 
         {/* Features Grid */}
-        <div className="row g-4">
+        {/* <div className="row g-4">
           {features.map((feature, index) => {
             const IconComponent = feature.icon;
             return (
@@ -151,41 +152,79 @@ export default function WhyChooseUsSection() {
               </div>
             );
           })}
-        </div>
+        </div> */}
 
         {/* Call to Action */}
-        <div className="row justify-content-center mt-5">
-          <div className="col-lg-8 text-center">
-            <div className={`${styles.ctaSection} p-4 p-md-5 ${isVisible ? styles.fadeInUp : ''}`}>
-              <h3 className={`${styles.ctaTitle} mb-3`}>
-                Ready for Your Next Adventure?
-              </h3>
-              <p className="text-muted mb-4">
-                Join thousands of satisfied travelers who have made unforgettable memories with us.
-              </p>
-              <div className="d-flex flex-column flex-sm-row gap-3 justify-content-center">
-                <button 
-                  className={`btn btn-lg px-5 py-3 rounded-pill fw-semibold ${styles.primaryButton}`}
-                  onClick={() => {
-                    // Add your navigation logic here
-                    console.log('Navigate to tours page');
-                  }}
+       <div className="row justify-content-center align-items-center mt-5">
+  {/* LEFT COLUMN - Why Choose Bhutan */}
+  <div className="col-12 col-md-6 text-start">
+    <div className={`${styles.ctaSection} p-4 p-md-5 ${isVisible ? styles.fadeInUp : ''}`}>
+      <h3 className={`${styles.ctaTitle} mb-4`} style={{ color: '#0b4878' }}>
+        Why Choose Bhutan?
+      </h3>
+      <div className="text-start">
+        {[
+          "The world's only carbon-negative country with pristine Himalayan landscapes",
+          "Ancient monasteries and spiritual heritage preserved for centuries",
+          "Full permit and visa assistance with expert local guidance throughout",
+          "Unique Gross National Happiness philosophy experienced firsthand",
+          "Exclusive small-group experiences in an untouched kingdom",
+           "The world's only carbon-negative country with pristine Himalayan landscapes",
+           "Ancient monasteries and spiritual heritage preserved for centuries",
+          "Full permit and visa assistance with expert local guidance throughout"
+        ].map((point, index) => (
+          <div key={index} className="d-flex align-items-start mb-3">
+            <div className="me-3 mt-1">
+              <div style={{
+                backgroundColor: '#22c55e',
+                width: '24px',
+                height: '24px',
+                borderRadius: '50%',
+                display: 'flex',
+                alignItems: 'center',
+                justifyContent: 'center'
+              }}>
+                <svg 
+                  xmlns="http://www.w3.org/2000/svg" 
+                  width="16" 
+                  height="16" 
+                  viewBox="0 0 24 24" 
+                  fill="none" 
+                  stroke="white" 
+                  strokeWidth="3" 
+                  strokeLinecap="round" 
+                  strokeLinejoin="round"
                 >
-                  Explore Our Tours
-                </button>
-                <button 
-                  className={`btn btn-outline-primary btn-lg px-5 py-3 rounded-pill fw-semibold ${styles.secondaryButton}`}
-                  onClick={() => {
-                    // Add your contact logic here
-                    console.log('Navigate to contact page');
-                  }}
-                >
-                  Contact Us Today
-                </button>
+                  <polyline points="20 6 9 17 4 12"></polyline>
+                </svg>
               </div>
             </div>
+            <p className="mb-0" style={{ color: '#334155' }}>{point}</p>
           </div>
-        </div>
+        ))}
+      </div>
+    </div>
+  </div>
+
+  {/* RIGHT COLUMN - Image */}
+  <div className="col-12 col-md-6">
+    <div className="p-3">
+     <Image
+  src="/bhutan-creative.jpg" // Replace with your actual image path
+  alt="Why Choose Bhutan"
+  className="img-fluid rounded shadow"
+  fill
+  style={{
+    objectFit: 'cover',
+    objectPosition: 'center',
+  }}
+  quality={100}
+  sizes="(max-width: 768px) 100vw, (max-width: 1200px) 100vw, 100vw"
+/>
+    </div>
+  </div>
+</div>
+
       </div>
     </section>
   );

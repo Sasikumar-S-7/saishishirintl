@@ -1,13 +1,13 @@
 /* WhyChooseUs.module.css */
 
-.whychoosesection {
+.whyChooseSection {
   background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%);
   position: relative;
   overflow: hidden;
   padding: 80px 0;
 }
 
-.whychoosesection::before {
+.whyChooseSection::before {
   content: '';
   position: absolute;
   top: 0;
@@ -19,15 +19,14 @@
 }
 
 .sectionTitle {
-  background: linear-gradient(135deg, #667eea, #764ba2);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
+  color: #0b4878; /* Brand blue */
   position: relative;
+  text-shadow: 0 2px 4px rgba(11, 72, 120, 0.1);
 }
 
 .sectionSubtitle {
-  color: #64748b;
+  color: #ff9f26; /* Brand orange */
+  font-weight: 500;
 }
 
 .featureCard {
@@ -38,11 +37,12 @@
   position: relative;
   overflow: hidden;
   height: 100%;
+  box-shadow: 0 10px 30px rgba(11, 72, 120, 0.1) !important;
 }
 
 .featureCard:hover {
   transform: translateY(-10px);
-  box-shadow: 0 25px 50px rgba(0,0,0,0.15) !important;
+  box-shadow: 0 25px 50px rgba(11, 72, 120, 0.2) !important;
 }
 
 .featureCard::before {
@@ -110,7 +110,7 @@
 }
 
 .featureTitle {
-  color: #1e293b;
+  color: #0b4878; /* Brand blue */
   font-weight: 700;
 }
 
@@ -120,13 +120,19 @@
 }
 
 .statsWrapper {
-  background: linear-gradient(135deg, #667eea, #764ba2);
+  background: linear-gradient(135deg, #0b4878, #0d5a9d); /* Brand blue gradient */
   border-radius: 20px;
   color: white;
   position: relative;
   overflow: hidden;
 }
-
+.statsWrappers {
+  background: linear-gradient(135deg, #0b4878, #0d5a9d); /* Brand blue gradient */
+ 
+  color: white;
+  position: relative;
+  overflow: hidden;
+}
 .statsWrapper::before {
   content: '';
   position: absolute;
@@ -142,46 +148,54 @@
   font-size: 3rem;
   font-weight: 800;
   line-height: 1;
+  color: white;
 }
 
 .statLabel {
-  opacity: 0.9;
-  font-weight: 500;
+  color: #ff9f26; /* Brand orange */
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  font-size: 0.9rem;
 }
 
 .ctaSection {
-  background: rgba(255, 255, 255, 0.7);
+  background: rgba(255, 255, 255, 0.9);
   border-radius: 20px;
   backdrop-filter: blur(10px);
+  border: 2px solid #ff9f26; /* Brand orange */
 }
 
 .ctaTitle {
-  color: #1e293b;
+  color: #0b4878; /* Brand blue */
+  font-weight: 700;
 }
 
 .primaryButton {
-  background: linear-gradient(135deg, #667eea, #764ba2);
+  background: #ff9f26; /* Brand orange */
   border: none;
   color: white;
-  box-shadow: 0 8px 25px rgba(102, 126, 234, 0.3);
+  box-shadow: 0 8px 25px rgba(255, 159, 38, 0.3);
   transition: all 0.3s ease;
 }
 
 .primaryButton:hover {
+  background: #e68a22; /* Darker orange */
   transform: translateY(-2px);
-  box-shadow: 0 12px 35px rgba(102, 126, 234, 0.4);
+  box-shadow: 0 12px 35px rgba(255, 159, 38, 0.4);
   color: white;
 }
 
 .secondaryButton {
-  border-color: #667eea;
-  color: #667eea;
+  border: 2px solid #0b4878; /* Brand blue */
+  color: #0b4878;
+  background: transparent;
   transition: all 0.3s ease;
 }
 
 .secondaryButton:hover {
-  background: #667eea;
-  border-color: #667eea;
+  background: #0b4878; /* Brand blue */
+  border-color: #0b4878;
   color: white;
   transform: translateY(-2px);
 }
@@ -220,7 +234,7 @@
 }
 
 @media (max-width: 768px) {
-  .whychoosesection {
+  .whyChooseSection {
     padding: 60px 0 !important;
   }
   
@@ -265,29 +279,25 @@
   }
 }
 
-/* Loading State */
-.loading .featureCard {
-  opacity: 0.7;
-  pointer-events: none;
-}
-
 /* Focus States for Accessibility */
 .primaryButton:focus,
 .secondaryButton:focus {
-  outline: 2px solid #667eea;
+  outline: 2px solid #0b4878;
   outline-offset: 2px;
 }
 
 /* High Contrast Mode Support */
 @media (prefers-contrast: high) {
   .featureCard {
-    border: 2px solid #1e293b;
+    border: 2px solid #0b4878;
   }
   
   .sectionTitle {
-    background: #1e293b;
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
+    color: #0b4878;
+    text-shadow: none;
+  }
+  
+  .primaryButton {
+    border: 2px solid black;
   }
 }

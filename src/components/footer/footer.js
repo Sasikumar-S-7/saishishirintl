@@ -12,10 +12,12 @@ const Footer = () => {
 
           {/* Logo & Description */}
           <div className="col-md-6 mb-3 mb-md-0 text-md-start text-center">
-            <img
+            <Image
               src="/Saishishir-logo.webp"
               alt="Sai Shishir Tours"
               className="footer-logo mb-2"
+               width={150}   // adjust as per your layout
+  height={60}
             />
             <p className="text-muted small mb-0">
               Sai Shishir Tours – Creating soulful travel experiences with love and care 💙

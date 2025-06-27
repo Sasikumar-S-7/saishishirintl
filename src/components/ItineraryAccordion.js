@@ -3,7 +3,7 @@ import React, { useState } from 'react';
 import { MapPin, Plus, Minus, Hotel, Utensils, Coffee, Eye, CheckCircle } from 'lucide-react';
 
 const Itinerary = () => {
-  const [expandedDays, setExpandedDays] = useState([0, 0]); // Day 3 and 4 expanded by default
+  const [expandedDays, setExpandedDays] = useState([]); 
   const [allExpanded, setAllExpanded] = useState(false);
 
   const toggleDay = (dayNumber) => {
@@ -80,9 +80,10 @@ const Itinerary = () => {
 
   return (
     <div style={{ 
-      maxWidth: '1000px', 
+      width: '100%', 
+      maxWidth: '1200px',
       margin: '0 auto', 
-      padding: '32px 20px',
+      padding: '20px',
       fontFamily: '-apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif',
       backgroundColor: '#fafafa',
       minHeight: '100vh'
@@ -90,24 +91,37 @@ const Itinerary = () => {
       {/* Header */}
       <div style={{ 
         display: 'flex', 
+        flexDirection: 'column',
+        gap: '16px',
         justifyContent: 'space-between', 
-        alignItems: 'center', 
-        marginBottom: '40px',
+        alignItems: 'flex-start', 
+        marginBottom: '32px',
         backgroundColor: 'white',
-        padding: '24px',
+        padding: '20px',
         borderRadius: '12px',
-        boxShadow: '0 2px 8px rgba(0,0,0,0.1)'
+        boxShadow: '0 2px 8px rgba(0,0,0,0.1)',
+        '@media (min-width: 640px)': {
+          flexDirection: 'row',
+          alignItems: 'center',
+          padding: '24px'
+        }
       }}>
         <h1 style={{ 
-          fontSize: '28px', 
+          fontSize: '24px', 
           fontWeight: '600', 
           color: '#1a1a1a',
-          
+          margin: 0,
+          '@media (min-width: 640px)': {
+            fontSize: '28px'
+          }
         }}>
           Itinerary <span style={{ 
-            fontSize: '20px', 
+            fontSize: '16px', 
             fontWeight: '400', 
-            color: '#6b7280' 
+            color: '#6b7280',
+            '@media (min-width: 640px)': {
+              fontSize: '20px'
+            }
           }}>(Day Wise)</span>
         </h1>
         <button 
@@ -121,7 +135,11 @@ const Itinerary = () => {
             borderRadius: '6px',
             cursor: 'pointer',
             transition: 'all 0.3s ease',
-            transform: 'scale(1)'
+            transform: 'scale(1)',
+            alignSelf: 'flex-end',
+            '@media (min-width: 640px)': {
+              alignSelf: 'center'
+            }
           }}
           onClick={toggleAllDays}
           onMouseOver={(e) => {
@@ -148,10 +166,16 @@ const Itinerary = () => {
         {/* Vertical Timeline Line */}
         <div style={{
           position: 'absolute',
-          left: '24px',
+          left: '16px',
+          '@media (min-width: 640px)': {
+            left: '24px'
+          },
           top: '0',
           bottom: '0',
-          width: '3px',
+          width: '2px',
+          '@media (min-width: 640px)': {
+            width: '3px'
+          },
           background: 'linear-gradient(to bottom, #2563eb, #60a5fa)',
           borderRadius: '2px'
         }}></div>
@@ -163,18 +187,31 @@ const Itinerary = () => {
           return (
             <div key={dayData.day} style={{ 
               position: 'relative', 
-              marginBottom: '24px'
+              marginBottom: '20px',
+              '@media (min-width: 640px)': {
+                marginBottom: '24px'
+              }
             }}>
               {/* Timeline Dot */}
               <div style={{
                 position: 'absolute',
-                left: '12px',
+                left: '8px',
+                '@media (min-width: 640px)': {
+                  left: '12px'
+                },
                 top: '24px',
-                width: '24px',
-                height: '24px',
+                width: '20px',
+                height: '20px',
+                '@media (min-width: 640px)': {
+                  width: '24px',
+                  height: '24px'
+                },
                 backgroundColor: isExpanded ? '#2563eb' : '#60a5fa',
                 borderRadius: '50%',
-                border: '4px solid white',
+                border: '3px solid white',
+                '@media (min-width: 640px)': {
+                  border: '4px solid white'
+                },
                 boxShadow: '0 2px 8px rgba(37, 99, 235, 0.3)',
                 zIndex: 10,
                 display: 'flex',
@@ -183,14 +220,24 @@ const Itinerary = () => {
                 transition: 'all 0.4s cubic-bezier(0.4, 0, 0.2, 1)',
                 transform: isExpanded ? 'scale(1.1)' : 'scale(1)'
               }}>
-                <MapPin size={12} color="white" />
+                <MapPin size={10} color="white" style={{ 
+                  '@media (min-width: 640px)': {
+                    size: '12px'
+                  }
+                }} />
               </div>
               
               {/* Day Card */}
               <div style={{
-                marginLeft: '64px',
+                marginLeft: '40px',
+                '@media (min-width: 640px)': {
+                  marginLeft: '64px'
+                },
                 backgroundColor: 'white',
-                borderRadius: '16px',
+                borderRadius: '12px',
+                '@media (min-width: 640px)': {
+                  borderRadius: '16px'
+                },
                 boxShadow: isExpanded ? '0 8px 25px rgba(0,0,0,0.15)' : '0 4px 15px rgba(0,0,0,0.1)',
                 overflow: 'hidden',
                 transition: 'all 0.4s cubic-bezier(0.4, 0, 0.2, 1)',
@@ -200,7 +247,10 @@ const Itinerary = () => {
                 {/* Day Header */}
                 <div 
                   style={{
-                    padding: '24px',
+                    padding: '16px',
+                    '@media (min-width: 640px)': {
+                      padding: '24px'
+                    },
                     cursor: hasContent ? 'pointer' : 'default',
                     backgroundColor: isExpanded ? '#eff6ff' : 'white',
                     borderBottom: isExpanded ? '1px solid #e0e7ff' : 'none',
@@ -225,10 +275,16 @@ const Itinerary = () => {
                   }}>
                     <div style={{ flex: 1 }}>
                       <div style={{
-                        fontSize: '14px',
+                        fontSize: '13px',
+                        '@media (min-width: 640px)': {
+                          fontSize: '14px'
+                        },
                         color: '#2563eb',
                         fontWeight: '600',
-                        marginBottom: '8px',
+                        marginBottom: '6px',
+                        '@media (min-width: 640px)': {
+                          marginBottom: '8px'
+                        },
                         letterSpacing: '0.5px'
                       }}>
                         Day {dayData.day} / {dayData.date}
@@ -236,7 +292,10 @@ const Itinerary = () => {
                       <div style={{
                         color: '#1f2937',
                         fontWeight: '500',
-                        fontSize: '18px',
+                        fontSize: '16px',
+                        '@media (min-width: 640px)': {
+                          fontSize: '18px'
+                        },
                         lineHeight: '1.4'
                       }}>
                         {dayData.title}
@@ -244,17 +303,26 @@ const Itinerary = () => {
                     </div>
                     {hasContent && (
                       <div style={{
-                        marginLeft: '16px',
-                        padding: '8px',
-                        borderRadius: '8px',
+                        marginLeft: '12px',
+                        '@media (min-width: 640px)': {
+                          marginLeft: '16px'
+                        },
+                        padding: '6px',
+                        '@media (min-width: 640px)': {
+                          padding: '8px'
+                        },
+                        borderRadius: '6px',
+                        '@media (min-width: 640px)': {
+                          borderRadius: '8px'
+                        },
                         backgroundColor: isExpanded ? '#2563eb' : '#f3f4f6',
                         transition: 'all 0.3s cubic-bezier(0.4, 0, 0.2, 1)',
                         transform: isExpanded ? 'rotate(180deg)' : 'rotate(0deg)'
                       }}>
                         {isExpanded ? (
-                          <Minus size={20} color="white" />
+                          <Minus size={18} color="white" />
                         ) : (
-                          <Plus size={20} color="#6b7280" />
+                          <Plus size={18} color="#6b7280" />
                         )}
                       </div>
                     )}
@@ -270,15 +338,20 @@ const Itinerary = () => {
                   transform: isExpanded ? 'translateY(0)' : 'translateY(-10px)'
                 }}>
                   {hasContent && (
-                    <div style={{ padding: '24px' }}>
+                    <div style={{ padding: '16px', '@media (min-width: 640px)': { padding: '24px' } }}>
                       {/* Description */}
                       {dayData.description && (
                         <p style={{
                           color: '#4b5563',
-                          fontSize: '15px',
+                          fontSize: '14px',
+                          '@media (min-width: 640px)': {
+                            fontSize: '15px'
+                          },
                           lineHeight: '1.6',
-                          marginBottom: '24px',
-                          margin: '0 0 24px 0',
+                          margin: '0 0 20px 0',
+                          '@media (min-width: 640px)': {
+                            margin: '0 0 24px 0'
+                          },
                           opacity: isExpanded ? 1 : 0,
                           transition: 'opacity 0.6s ease 0.2s'
                         }}>
@@ -290,9 +363,18 @@ const Itinerary = () => {
                       {dayData.sightseeing.length > 0 && (
                         <div style={{
                           backgroundColor: '#f0fdf4',
-                          borderRadius: '12px',
-                          padding: '20px',
-                          marginBottom: '24px',
+                          borderRadius: '10px',
+                          '@media (min-width: 640px)': {
+                            borderRadius: '12px'
+                          },
+                          padding: '16px',
+                          '@media (min-width: 640px)': {
+                            padding: '20px'
+                          },
+                          marginBottom: '20px',
+                          '@media (min-width: 640px)': {
+                            marginBottom: '24px'
+                          },
                           border: '1px solid #bbf7d0',
                           opacity: isExpanded ? 1 : 0,
                           transition: 'opacity 0.6s ease 0.3s',
@@ -301,25 +383,44 @@ const Itinerary = () => {
                           <div style={{
                             display: 'flex',
                             alignItems: 'center',
-                            marginBottom: '16px'
+                            marginBottom: '12px',
+                            '@media (min-width: 640px)': {
+                              marginBottom: '16px'
+                            }
                           }}>
                             <div style={{
                               backgroundColor: '#16a34a',
-                              borderRadius: '8px',
-                              padding: '8px',
-                              marginRight: '12px',
+                              borderRadius: '6px',
+                              '@media (min-width: 640px)': {
+                                borderRadius: '8px'
+                              },
+                              padding: '6px',
+                              '@media (min-width: 640px)': {
+                                padding: '8px'
+                              },
+                              marginRight: '10px',
+                              '@media (min-width: 640px)': {
+                                marginRight: '12px'
+                              },
                               transition: 'transform 0.3s ease'
                             }}>
-                              <Eye size={16} color="white" />
+                              <Eye size={14} color="white" style={{ 
+                                '@media (min-width: 640px)': {
+                                  size: '16px'
+                                }
+                              }} />
                             </div>
                             <h3 style={{
                               fontWeight: '600',
                               color: '#1f2937',
-                              fontSize: '16px',
+                              fontSize: '15px',
+                              '@media (min-width: 640px)': {
+                                fontSize: '16px'
+                              },
                               margin: 0
-                            }}>Today's Sightseeing</h3>
+                            }}>Todays Sightseeing</h3>
                           </div>
-                          <div style={{ display: 'flex', flexDirection: 'column', gap: '12px' }}>
+                          <div style={{ display: 'flex', flexDirection: 'column', gap: '10px', '@media (min-width: 640px)': { gap: '12px' } }}>
                             {dayData.sightseeing.map((place, idx) => (
                               <div key={idx} style={{
                                 display: 'flex',
@@ -328,9 +429,19 @@ const Itinerary = () => {
                                 transition: `opacity 0.4s ease ${0.4 + idx * 0.1}s, transform 0.4s ease ${0.4 + idx * 0.1}s`,
                                 transform: isExpanded ? 'translateX(0)' : 'translateX(-20px)'
                               }}>
-                                <CheckCircle size={18} color="#16a34a" style={{ marginRight: '12px', flexShrink: 0 }} />
+                                <CheckCircle size={16} color="#16a34a" style={{ 
+                                  marginRight: '10px',
+                                  '@media (min-width: 640px)': {
+                                    marginRight: '12px',
+                                    size: '18px'
+                                  },
+                                  flexShrink: 0 
+                                }} />
                                 <span style={{
-                                  fontSize: '14px',
+                                  fontSize: '13px',
+                                  '@media (min-width: 640px)': {
+                                    fontSize: '14px'
+                                  },
                                   color: '#374151',
                                   fontWeight: '500'
                                 }}>{place}</span>
@@ -344,8 +455,14 @@ const Itinerary = () => {
                       {(dayData.accommodation || dayData.meals || dayData.extras) && (
                         <div style={{
                           display: 'grid',
-                          gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))',
-                          gap: '16px',
+                          gridTemplateColumns: '1fr',
+                          '@media (min-width: 640px)': {
+                            gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))'
+                          },
+                          gap: '12px',
+                          '@media (min-width: 640px)': {
+                            gap: '16px'
+                          },
                           opacity: isExpanded ? 1 : 0,
                           transition: 'opacity 0.6s ease 0.4s',
                           transform: isExpanded ? 'translateY(0)' : 'translateY(20px)'
@@ -355,9 +472,15 @@ const Itinerary = () => {
                             <div style={{
                               display: 'flex',
                               alignItems: 'flex-start',
-                              padding: '16px',
+                              padding: '12px',
+                              '@media (min-width: 640px)': {
+                                padding: '16px'
+                              },
                               backgroundColor: '#eff6ff',
-                              borderRadius: '12px',
+                              borderRadius: '10px',
+                              '@media (min-width: 640px)': {
+                                borderRadius: '12px'
+                              },
                               border: '1px solid #dbeafe',
                               transition: 'transform 0.3s ease, box-shadow 0.3s ease',
                               cursor: 'pointer'
@@ -372,15 +495,31 @@ const Itinerary = () => {
                             }}>
                               <div style={{
                                 backgroundColor: '#2563eb',
-                                borderRadius: '8px',
-                                padding: '8px',
-                                marginRight: '12px'
+                                borderRadius: '6px',
+                                '@media (min-width: 640px)': {
+                                  borderRadius: '8px'
+                                },
+                                padding: '6px',
+                                '@media (min-width: 640px)': {
+                                  padding: '8px'
+                                },
+                                marginRight: '10px',
+                                '@media (min-width: 640px)': {
+                                  marginRight: '12px'
+                                }
                               }}>
-                                <Hotel size={16} color="white" />
+                                <Hotel size={14} color="white" style={{ 
+                                  '@media (min-width: 640px)': {
+                                    size: '16px'
+                                  }
+                                }} />
                               </div>
                               <div>
                                 <div style={{
-                                  fontSize: '14px',
+                                  fontSize: '13px',
+                                  '@media (min-width: 640px)': {
+                                    fontSize: '14px'
+                                  },
                                   fontWeight: '600',
                                   color: '#1f2937',
                                   marginBottom: '4px'
@@ -398,9 +537,15 @@ const Itinerary = () => {
                             <div style={{
                               display: 'flex',
                               alignItems: 'flex-start',
-                              padding: '16px',
+                              padding: '12px',
+                              '@media (min-width: 640px)': {
+                                padding: '16px'
+                              },
                               backgroundColor: '#fff7ed',
-                              borderRadius: '12px',
+                              borderRadius: '10px',
+                              '@media (min-width: 640px)': {
+                                borderRadius: '12px'
+                              },
                               border: '1px solid #fed7aa',
                               transition: 'transform 0.3s ease, box-shadow 0.3s ease',
                               cursor: 'pointer'
@@ -415,15 +560,31 @@ const Itinerary = () => {
                             }}>
                               <div style={{
                                 backgroundColor: '#ea580c',
-                                borderRadius: '8px',
-                                padding: '8px',
-                                marginRight: '12px'
+                                borderRadius: '6px',
+                                '@media (min-width: 640px)': {
+                                  borderRadius: '8px'
+                                },
+                                padding: '6px',
+                                '@media (min-width: 640px)': {
+                                  padding: '8px'
+                                },
+                                marginRight: '10px',
+                                '@media (min-width: 640px)': {
+                                  marginRight: '12px'
+                                }
                               }}>
-                                <Utensils size={16} color="white" />
+                                <Utensils size={14} color="white" style={{ 
+                                  '@media (min-width: 640px)': {
+                                    size: '16px'
+                                  }
+                                }} />
                               </div>
                               <div>
                                 <div style={{
-                                  fontSize: '14px',
+                                  fontSize: '13px',
+                                  '@media (min-width: 640px)': {
+                                    fontSize: '14px'
+                                  },
                                   fontWeight: '600',
                                   color: '#1f2937',
                                   marginBottom: '4px'
@@ -441,9 +602,15 @@ const Itinerary = () => {
                             <div style={{
                               display: 'flex',
                               alignItems: 'flex-start',
-                              padding: '16px',
+                              padding: '12px',
+                              '@media (min-width: 640px)': {
+                                padding: '16px'
+                              },
                               backgroundColor: '#f0fdf4',
-                              borderRadius: '12px',
+                              borderRadius: '10px',
+                              '@media (min-width: 640px)': {
+                                borderRadius: '12px'
+                              },
                               border: '1px solid #bbf7d0',
                               transition: 'transform 0.3s ease, box-shadow 0.3s ease',
                               cursor: 'pointer'
@@ -458,15 +625,31 @@ const Itinerary = () => {
                             }}>
                               <div style={{
                                 backgroundColor: '#16a34a',
-                                borderRadius: '8px',
-                                padding: '8px',
-                                marginRight: '12px'
+                                borderRadius: '6px',
+                                '@media (min-width: 640px)': {
+                                  borderRadius: '8px'
+                                },
+                                padding: '6px',
+                                '@media (min-width: 640px)': {
+                                  padding: '8px'
+                                },
+                                marginRight: '10px',
+                                '@media (min-width: 640px)': {
+                                  marginRight: '12px'
+                                }
                               }}>
-                                <Coffee size={16} color="white" />
+                                <Coffee size={14} color="white" style={{ 
+                                  '@media (min-width: 640px)': {
+                                    size: '16px'
+                                  }
+                                }} />
                               </div>
                               <div>
                                 <div style={{
-                                  fontSize: '14px',
+                                  fontSize: '13px',
+                                  '@media (min-width: 640px)': {
+                                    fontSize: '14px'
+                                  },
                                   fontWeight: '600',
                                   color: '#1f2937',
                                   marginBottom: '4px'

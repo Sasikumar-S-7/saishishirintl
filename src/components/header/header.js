@@ -7,11 +7,12 @@ const Header = () => {
       <div className="container d-flex justify-content-between align-items-center px-3">
         {/* Logo */}
         <div className="logo-wrapper">
-          <img
-            src="/Saishishir-logo.webp"
-            alt="Sai Shishir Tours"
-            className="brand-logo"
-          />
+          <Image
+  src="/Saishishir-logo.webp"
+  alt="Sai Shishir Tours Logo"
+  width={150}   // adjust as per your layout
+  height={60}
+/>
         </div>
         {/* Call Button */}
         <div>

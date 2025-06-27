@@ -18,7 +18,7 @@ body {
   color: #ff9f26;
 }
 .blue-brand-bg-color {
-  background-color: #0b4878;
+  background-color: #0b4878 !important;
 }
 .orange-brand-bg-color {
   background-color: #ff9f26;
@@ -139,7 +139,7 @@ body {
 }
 .package-title {
   font-family: 'Recoleta', 'Playfair Display', 'Georgia', serif;
-  font-size: 170px;
+  font-size: 160px;
   font-weight: bold;
   line-height: 1.1;
   letter-spacing: -0.5px;
@@ -162,3 +162,28 @@ body {
   font-size: 32px;
   font-weight: 600;
 }
+:where(.css-dev-only-do-not-override-os2fvf).ant-form-item {
+  margin-bottom: 0px !important;
+}
+.text-orange {
+  color: #0b4878;
+}
+
+.bg-orange {
+  background-color: #ff9f26;
+}
+
+.border-orange {
+  border-color: #0b4878 !important;
+  border: 1px solid;
+}
+.month{
+  font-size: 10px;
+}
+.date{
+  font-size: 10px;
+}
+.month-date-tag {
+  border-radius: 5px !important; /* Fully rounded pill shape */
+}
+
