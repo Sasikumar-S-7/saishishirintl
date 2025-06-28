@@ -153,7 +153,7 @@ export default function BhutanForm() {
                     onFinish={onFinish}
                     size="large"
                   >
-                    <Row gutter={[16, 16]}>
+                    <Row gutter={[16, 8]}>
                       <Col span={24}>
                         <Form.Item 
                           name="your-name" 
