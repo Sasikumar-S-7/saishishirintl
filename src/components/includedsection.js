@@ -36,7 +36,7 @@ const BhutanExperience = () => {
         <div className="col-lg-10">
           <div className="text-center mb-5">
             <h2 className="fw-bold mb-3" style={{ color: '#0b4878' }}>
-              What's Included in Your Bhutan Experience?
+              Whats Included in Your Bhutan Experience?
             </h2>
             <div
               className="border-bottom mx-auto"

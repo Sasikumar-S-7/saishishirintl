@@ -11,6 +11,7 @@ import {
   DollarSign, 
   Star 
 } from 'lucide-react';
+import Image from 'next/image';
 import styles from '../app/WhyChooseUs.module.css';
 
 export default function WhyChooseUsSection() {
@@ -208,7 +209,7 @@ export default function WhyChooseUsSection() {
   {/* RIGHT COLUMN - Image */}
   <div className="col-12 col-md-6">
     <div className="p-3">
-      <img
+      <Image
         src="/bhutan/bhutan-creative-new.webp" // Replace with your actual image path
         alt="Why Choose Bhutan"
         className="img-fluid rounded shadow"
