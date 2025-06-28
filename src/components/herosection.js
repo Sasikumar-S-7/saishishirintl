@@ -2,13 +2,13 @@ import React from 'react';
 import BhutanForm from './Bhutanform';
 import DepartureDates from './availabledates';
 
-export default function BhutanTourBanner() {
+export default function Herosection() {
   return (
     <>
-      <div className='container-fluid blue-brand-bg-color p-3 d-flex flex-wrap justify-content-center'>
+      <div className='container-fluid blue-brand-bg-color p-3 d-flex flex-wrap justify-content-center' >
         <h1 className='keyword-title text-white m-0'>Best Bhutan Packages From Bangalore</h1>
       </div>
-      <div className='container'>
+      <div  className='container'>
         <div className=''>
           <div className='row align-items-center'>
             <div className='col-12 col-md-7 px-md-5 py-3'>

@@ -81,9 +81,9 @@ export default function WhyChooseUsSection() {
   ];
 
   const statistics = [
-    { number: "50K+", label: "Happy Travelers" },
-    { number: "350+", label: "Tour Managers" },
-    { number: "15+", label: "Years Experience" },
+    { number: "100K+", label: "Happy Travelers" },
+    { number: "50+", label: "Tour Managers" },
+    { number: "11+", label: "Years Experience" },
     { number: "100+", label: "Destinations" }
   ];
 
@@ -209,10 +209,10 @@ export default function WhyChooseUsSection() {
   <div className="col-12 col-md-6">
     <div className="p-3">
       <img
-        src="/bhutan-creative.jpg" // Replace with your actual image path
+        src="/bhutan/bhutan-creative-new.webp" // Replace with your actual image path
         alt="Why Choose Bhutan"
         className="img-fluid rounded shadow"
-        style={{ objectFit: 'cover', width: '100%', height: '100%' }}
+        style={{ objectFit: 'cover', width: '100%', height: '100%',zIndex:999, }}
       />
     </div>
   </div>

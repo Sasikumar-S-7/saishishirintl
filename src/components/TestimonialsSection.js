@@ -188,9 +188,9 @@ export default function TestimonialsSection() {
   };
 
   return (
-    <div className="bg-light">
+    <div className="bg-background">
       <section 
-        className="position-relative overflow-hidden WhyChooseUs-module__AIl1iW__statsWrappers p-4 p-md-5 WhyChooseUs-module__AIl1iW__fadeInUp py-5"
+        className="position-relative overflow-hidden  p-4 p-md-5 fadeInUp py-5"
         style={{
              borderadius: '0px !important',
           padding: '80px 0 120px 0'

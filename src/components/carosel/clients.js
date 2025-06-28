@@ -8,6 +8,7 @@ import Image from 'next/image';
 const BaliCarousel = () => {
   const [isFullscreen, setIsFullscreen] = useState(false);
   const [fullscreenImage, setFullscreenImage] = useState('');
+  const [imageDimensions, setImageDimensions] = useState({ width: 0, height: 0 });
 
   const settings = {
     infinite: true,
@@ -47,31 +48,76 @@ const BaliCarousel = () => {
   };
 
   const images = [
-    '/portrait-young-woman-taking-pictures-holiday.jpg',
-    '/portrait-young-woman-taking-pictures-holiday.jpg',
-    '/portrait-young-woman-taking-pictures-holiday.jpg',
-    '/portrait-young-woman-taking-pictures-holiday.jpg',
-    '/portrait-young-woman-taking-pictures-holiday.jpg',
-    '/full-shot-travel-concept-with-landmarks.jpg',
+    '/bhutan/bhutanclient.webp',
+    '/bhutan/bhutanclient-1.webp',
+    '/bhutan/bhutanclient-2.webp',
+    '/bhutan/bhutanclient-3.webp',
+    '/bhutan/bhutanclient-4.webp',
+    '/bhutan/bhutanclient-5.webp',
+    '/bhutan/bhutanclient-6.webp',
+    '/bhutan/bhutanclient-8.webp',
   ];
 
-  const openFullscreen = (imageSrc) => {
+  // Function to get actual image dimensions
+  const getImageDimensions = (imageSrc) => {
+    return new Promise((resolve) => {
+      const img = new window.Image();
+      img.onload = () => {
+        resolve({ width: img.naturalWidth, height: img.naturalHeight });
+      };
+      img.onerror = () => {
+        resolve({ width: 800, height: 600 }); // fallback dimensions
+      };
+      img.src = imageSrc;
+    });
+  };
+
+  const openFullscreen = async (imageSrc) => {
     setFullscreenImage(imageSrc);
     setIsFullscreen(true);
     document.body.style.overflow = 'hidden';
+    
+    // Get actual image dimensions
+    const dimensions = await getImageDimensions(imageSrc);
+    setImageDimensions(dimensions);
   };
 
   const closeFullscreen = () => {
     setIsFullscreen(false);
     setFullscreenImage('');
+    setImageDimensions({ width: 0, height: 0 });
     document.body.style.overflow = 'unset';
   };
 
+  // Calculate display dimensions (actual size but constrained to viewport)
+  const getDisplayDimensions = () => {
+    if (!imageDimensions.width || !imageDimensions.height) return {};
+    
+    const maxWidth = window.innerWidth * 1.0;
+    const maxHeight = window.innerHeight * 1.0;
+    
+    let { width, height } = imageDimensions;
+    
+    // If image is larger than viewport, scale it down while maintaining aspect ratio
+    if (width > maxWidth || height > maxHeight) {
+      const widthRatio = maxWidth / width;
+      const heightRatio = maxHeight / height;
+      const scale = Math.min(widthRatio, heightRatio);
+      
+      width = width * scale;
+      height = height * scale;
+    }
+    
+    return { width, height };
+  };
+
+  const displayDimensions = getDisplayDimensions();
+
   return (
     <div className="container py-4">
-        <div className='container'>
-            <h2 className='fw-bold my-4 text-center display-4 fw-bold mb-3 WhyChooseUs-module__AIl1iW__sectionTitle WhyChooseUs-module__AIl1iW__fadeInUp'>Our Travelled Customers</h2>
-        </div>
+      <div className='container'>
+        <h2 className='fw-bold my-4 text-center display-4 fw-bold mb-3 WhyChooseUs-module__AIl1iW__sectionTitle WhyChooseUs-module__AIl1iW__fadeInUp'>Our Travelled Customers</h2>
+      </div>
       <Slider {...settings}>
         {images.map((src, index) => (
           <div key={index} className="px-2">
@@ -104,15 +150,27 @@ const BaliCarousel = () => {
             <button className="close-button" onClick={closeFullscreen}>
               ✕
             </button>
-            <div className="fullscreen-image-wrapper">
+            <div className="fullscreen-image-wrapper" style={displayDimensions}>
               <Image
                 src={fullscreenImage}
                 alt="Fullscreen view"
-                fill
+                width={imageDimensions.width}
+                height={imageDimensions.height}
                 className="fullscreen-image"
-                sizes="100vw"
+                style={{
+                  width: displayDimensions.width,
+                  height: displayDimensions.height,
+                  objectFit: 'contain'
+                }}
                 priority
               />
+            </div>
+            {/* Show actual dimensions info */}
+            <div className="image-info">
+              {imageDimensions.width}×{imageDimensions.height}px
+              {displayDimensions.width !== imageDimensions.width && (
+                <span> (scaled to fit)</span>
+              )}
             </div>
           </div>
         </div>
@@ -123,7 +181,7 @@ const BaliCarousel = () => {
         .image-wrapper {
           position: relative;
           width: 100%;
-          padding-top: 75%; /* 4:3 aspect ratio */
+          padding-top: 85%; /* 4:3 aspect ratio */
           overflow: hidden;
           border-radius: 16px;
           box-shadow: 0 8px 32px rgba(0, 0, 0, 0.12);
@@ -141,7 +199,7 @@ const BaliCarousel = () => {
           object-fit: cover;
           transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
           border-radius: 16px;
-          height:auto;
+          height: auto;
         }
 
         .hover-overlay {
@@ -207,23 +265,40 @@ const BaliCarousel = () => {
 
         .fullscreen-content {
           position: relative;
-          width: 90vw;
-          height: 90vh;
-          max-width: 1200px;
-          max-height: 800px;
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          justify-content: center;
+          max-width: 90vw;
+          max-height: 90vh;
         }
 
         .fullscreen-image-wrapper {
           position: relative;
-          width: 100%;
-          height: 100%;
           border-radius: 12px;
           overflow: hidden;
           box-shadow: 0 24px 64px rgba(0, 0, 0, 0.4);
+          background: white;
         }
 
         .fullscreen-image {
-          object-fit: contain;
+          border-radius: 12px;
+          max-width: 100%;
+          max-height: 100%;
+        }
+
+        .image-info {
+          position: absolute;
+          bottom: -40px;
+          left: 50%;
+          transform: translateX(-50%);
+          color: white;
+          background: rgba(0, 0, 0, 0.7);
+          padding: 8px 16px;
+          border-radius: 20px;
+          font-size: 14px;
+          backdrop-filter: blur(10px);
+          white-space: nowrap;
         }
 
         .close-button {
@@ -282,7 +357,7 @@ const BaliCarousel = () => {
         /* Responsive Design */
         @media (max-width: 1024px) {
           .image-wrapper {
-            padding-top: 80%; /* Slightly taller for tablets */
+            padding-top: 80%;
           }
           
           :global(.slick-prev) {
@@ -296,7 +371,7 @@ const BaliCarousel = () => {
 
         @media (max-width: 768px) {
           .image-wrapper {
-            padding-top: 85%; /* More square for mobile */
+            padding-top: 85%;
             border-radius: 12px;
           }
 
@@ -308,8 +383,14 @@ const BaliCarousel = () => {
           }
 
           .fullscreen-content {
-            width: 95vw;
-            height: 85vh;
+            max-width: 95vw;
+            max-height: 85vh;
+          }
+
+          .image-info {
+            bottom: -35px;
+            font-size: 12px;
+            padding: 6px 12px;
           }
 
           :global(.slick-prev),
@@ -350,8 +431,14 @@ const BaliCarousel = () => {
           }
 
           .fullscreen-content {
-            width: 98vw;
-            height: 80vh;
+            max-width: 98vw;
+            max-height: 80vh;
+          }
+
+          .image-info {
+            bottom: -30px;
+            font-size: 11px;
+            padding: 4px 10px;
           }
         }
 

@@ -4,20 +4,24 @@ import React from 'react';
 const FaqAccordion = () => {
   const faqItems = [
     {
-      question: 'What is included in the tour package?',
-      answer: 'Our comprehensive packages include round-trip flights, premium accommodation, daily meals, sightseeing, transfers, and more.',
+      question: 'Do Indians require a visa to visit Bhutan from Bangalore?',
+      answer: 'No, Indians don’t need a visa for a Bhutan package from Bangalore. A Voter ID is sufficient, and a passport is not mandatory.',
     },
     {
-      question: 'How can I book a package?',
-      answer: 'You can book directly on our website, via WhatsApp, or call our travel experts for assistance.',
+      question: 'Which major attractions in Bhutan does this tour package include?',
+      answer: 'Our Bhutan tour package from Bangalore covers Tiger’s Nest, DochuLa Pass, Punakha Dzong, Thimphu City, Buddha Point, Gelephu, Gedu, the Hanging Bridge in Punakha, river rafting, the National Museum in Paro, and shopping in Phuentsholing.',
     },
     {
-      question: 'Are the packages customizable?',
-      answer: 'Yes! Most of our packages can be fully tailored to your preferences.',
+      question: 'Are there any events to attend during the Bhutan tour from Bangalore?',
+      answer: 'Yes, there is the River Rafting event on the Punakha river during the Bhutan tour from Bangalore.',
     },
     {
-      question: 'Do you provide visa assistance?',
-      answer: 'Absolutely! We help with documentation, appointments, and end-to-end visa processing.',
+      question: 'Can I participate in traditional Bhutanese activities in this tour package?',
+      answer: 'Yes, you can participate in traditional Bhutanese activities with this tour package from Bangalore, including Bhutanese dance programs, bonfires, and folk dances.',
+    },
+    {
+      question: 'What is the best time to visit Bhutan?',
+      answer: 'The best time to visit Bhutan is during the spring (March to May) or autumn (September to November). Spring offers lush greenery and vibrant flowers, while autumn is known for the Thimphu festival and clear mountain views. However, each season has its own charm, so it depends on your preferences. ',
     },
   ];
 
@@ -26,7 +30,7 @@ const FaqAccordion = () => {
       <div className="row justify-content-center">
         <div className="col-lg-8">
           <div className="text-center mb-5">
-            <h2 className="display-6 fw-bold text-primary mb-3">Frequently Asked Questions</h2>
+            <h2 className="display-5 fw-bold mb-3 blue-brand-color">Frequently Asked Questions</h2>
             <p className="lead text-muted">Everything you need to know about our travel packages</p>
           </div>
 
@@ -42,7 +46,7 @@ const FaqAccordion = () => {
                     aria-expanded="false"
                     aria-controls={`collapse${index}`}
                   >
-                    <span className="text-primary fw-bold me-2">{String(index + 1).padStart(2, '0')}.</span>
+                    <span className="blue-brand-color fw-bold me-2">{String(index + 1).padStart(2, '0')}.</span>
                     {item.question}
                   </button>
                 </h2>
@@ -63,8 +67,8 @@ const FaqAccordion = () => {
           <div className="text-center mt-5">
             <p className="text-muted mb-3">Still have questions?</p>
             <div className="d-flex justify-content-center gap-3 flex-wrap">
-              <a href="#" className="btn btn-primary">Contact Support</a>
-              <a href="#" className="btn btn-outline-warning text-dark">Live Chat</a>
+              <a href="" className="btn blue-brand-bg-color text-white fw-bold">Contact Support</a>
+              <a href="" className="btn btn-outline-warning text-dark">Live Chat</a>
             </div>
           </div>
         </div>

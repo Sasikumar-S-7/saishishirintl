@@ -130,7 +130,7 @@ export default function BhutanForm() {
   return (
     <>
       <div className="py-3">
-        <div className="">
+        <div className="" id='contact'>
           <div className="row justify-content-center">
             <div className="">
               <Card 
@@ -160,7 +160,7 @@ export default function BhutanForm() {
                           rules={[{ required: true }]}
                         >
                           <Input 
-                            prefix={<UserOutlined className="text-primary" />}
+                            prefix={<UserOutlined className="text-primary pe-1" />}
                             placeholder="Your full name" 
                             className="rounded-pill"
                             style={{ height: '50px', border: 'none', background: 'rgba(240, 240, 240, 0.8)' }}
@@ -203,7 +203,7 @@ export default function BhutanForm() {
                           ]}
                         >
                           <Input 
-                            prefix={<PhoneOutlined className="text-primary" />}
+                            prefix={<PhoneOutlined className="text-primary pe-1" />}
                             placeholder="Phone number" 
                             className="rounded-pill"
                             style={{ height: '50px', border: 'none', background: 'rgba(240, 240, 240, 0.8)' }}
@@ -217,7 +217,7 @@ export default function BhutanForm() {
                           rules={[{ type: 'email' }]}
                         >
                           <Input 
-                            prefix={<MailOutlined className="text-primary" />}
+                            prefix={<MailOutlined className="text-primary pe-1" />}
                             placeholder="Email address" 
                             className="rounded-pill"
                             style={{ height: '50px', border: 'none', background: 'rgba(240, 240, 240, 0.8)' }}

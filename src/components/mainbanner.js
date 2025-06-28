@@ -27,23 +27,23 @@ const CustomCarousel = () => {
   const slides = [
     {
       id: 1,
-      desktopImage: '/buddha-statue-thimpu-bhutan.webp',
-      mobileImage: '/bhutan-banner-mobile.jpg',
-    //   title: 'Bhutan Cultural Tour',
+      desktopImage: '/bhutan/bhutan-banner-2.webp',
+      mobileImage: '/bhutan/bhutan-mb-banner-1.webp',
+      title: 'Bhutan Cultural Tour',
     //   description: 'Experience the rich heritage of Bhutan with our exclusive packages from Bangalore'
     },
     {
       id: 2,
-      desktopImage: '/thimphu-monastery-bhutan.webp',
-      mobileImage: '/himalayan-adventure-mobile.jpg',
-    //   title: 'Himalayan Adventures',
+      desktopImage: '/bhutan/bhutan-banner-1.webp',
+      mobileImage: '/bhutan/bhutan-mb-banner.webp',
+      title: 'Himalayan Adventures',
     //   description: 'Trek through breathtaking landscapes with our expert guides'
     },
     {
       id: 3,
-      desktopImage: '/punakha-dzong-monastery-bridge-across-river-bhutan-asia.webp',
-      mobileImage: '/all-inclusive-mobile.jpg',
-    //   title: 'All-Inclusive Packages',
+      desktopImage: '/bhutan/bhutan-banner-3.webp',
+      mobileImage: '/bhutan/bhutan-mb-banner-3.webp',
+      title: 'All-Inclusive Packages',
     //   description: 'Flights, accommodation, meals and sightseeing - we handle it all!'
     }
   ];
@@ -122,7 +122,7 @@ const CustomCarousel = () => {
       >
         {slides.map((slide) => (
           <Carousel.Item key={slide.id} interval={3000}>
-            <div className="d-block w-100" style={{ height: isMobile ? '400px' : '600px', position: 'relative' }}>
+            <div className="d-block w-100" style={{ height: isMobile ? '650px' : '700px', position: 'relative' }}>
               <Image
                 src={isMobile ? slide.mobileImage : slide.desktopImage}
                 alt={slide.title}
@@ -133,14 +133,14 @@ const CustomCarousel = () => {
                 sizes="(max-width: 768px) 100vw, (max-width: 1200px) 100vw, 100vw"
               />
             </div>
-            <Carousel.Caption>
+            {/* <Carousel.Caption>
               {slide.id === 1 ? (
                 <h2>{slide.title}</h2>
               ) : (
                 <h3>{slide.title}</h3>
               )}
               <p>{slide.description}</p>
-            </Carousel.Caption>
+            </Carousel.Caption> */}
           </Carousel.Item>
         ))}
       </Carousel>

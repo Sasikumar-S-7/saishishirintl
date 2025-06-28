@@ -185,3 +185,23 @@ body {
   border-radius: 5px !important; /* Fully rounded pill shape */
 }
 
+.ant-form-item{
+    margin-bottom:10px !important;
+}
+.bg-background {
+  background: linear-gradient(135deg, #0b4878, #0d5a9d); /* Brand blue gradient */
+  
+  color: white;
+  position: relative;
+  overflow: hidden;
+}
+.bg-background::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><circle cx="25" cy="25" r="2" fill="white" opacity="0.1"/><circle cx="75" cy="75" r="1.5" fill="white" opacity="0.1"/><circle cx="50" cy="50" r="1" fill="white" opacity="0.05"/></svg>');
+  pointer-events: none;
+}

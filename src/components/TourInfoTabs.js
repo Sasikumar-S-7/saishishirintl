@@ -164,7 +164,7 @@ export default function TourInfoTabs() {
       
       <div className="container py-4">
         <div className="card shadow-sm">
-          <div className="card-header WhyChooseUs-module__AIl1iW__statsWrapper p-4 p-md-4 WhyChooseUs-module__AIl1iW__fadeInUp text-white fw-bold text-center">
+          <div className="card-header  p-4 p-md-4 bg-background fadeInUp text-white fw-bold text-center">
             <h4 className="card-title mb-1">Tour Information</h4>
             <p className="card-text mb-0 opacity-75">
               Read this to prepare for your tour in the best way!

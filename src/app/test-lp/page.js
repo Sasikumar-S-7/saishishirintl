@@ -3,7 +3,7 @@ import BaliCarousel from '@/components/carosel/clients'
 import FaqAccordion from '@/components/FaqAccordion'
 import Footer from '@/components/footer/footer'
 import Header from '@/components/header/header'
-import BhutanTourBanner from '@/components/herosection'
+import Herosection from '@/components/herosection'
 import BhutanExperience from '@/components/includedsection'
 // import Itinerary from '@/components/ItineraryAccordion'
 import KailashBanner from '@/components/KailashBanner'
@@ -20,7 +20,7 @@ const page = () => {
     <div>
           <Header/>
           <CustomCarousel/>
-        <BhutanTourBanner/>
+        <Herosection/>
         <KailashBanner/>
       <BaliCarousel/>
       {/* <Itinerary/> */}
