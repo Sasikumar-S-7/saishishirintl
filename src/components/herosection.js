@@ -55,7 +55,7 @@ export default function Herosection() {
               <DepartureDates/>
             </div>
 
-            <div className='col-12 col-md-5'>
+            <div className='col-12 col-md-5' id="hero-section">
               <BhutanForm />
             </div>
           </div>

@@ -31,7 +31,7 @@ export default function BhutanTourLanding() {
     if (showSuccessModal && countdown > 0) {
       timer = setTimeout(() => setCountdown(countdown - 1), 1000);
     } else if (showSuccessModal && countdown === 0) {
-      router.push('/bhutan-lp/thank-you');
+      router.push('/bhutan-tour-package-lp/thank-you');
     }
     return () => clearTimeout(timer);
   }, [showSuccessModal, countdown, router]);
@@ -94,7 +94,7 @@ export default function BhutanTourLanding() {
 
   const handleModalClose = () => {
     setShowSuccessModal(false);
-    router.push('/bhutan-lp/thank-you');
+    router.push('/bhutan-tour-package-lp/thank-you');
   };
 
   return (

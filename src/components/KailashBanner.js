@@ -17,7 +17,7 @@ export default function KailashBanner() {
           <div className="col-md-10 col-lg-10">
             <h2 className="fw-bold mb-3 text-center display-4 fw-bold mb-3 WhyChooseUs-module__AIl1iW__sectionTitle WhyChooseUs-module__AIl1iW__fadeInUp">Bhutan Holiday Packages From Bangalore</h2>
             <p className="lead text-muted mb-4 text-center">
-              SaiShishir Tours is thrilled to announce an exciting Bhutan tour package from Bangalore with a flight included. Join us to explore this small, landlocked country, rich in culture, brimming with uniqueness, filled with mountains and picturesque landscapes and one–of–a–kind cuisine all in a tour that is sure to satisfy. Our carefully crafted Bhutan trip package from Bangalore promises an unforgettable adventure with simplicity and joy.As a Bangalore-based company, we specialize in group and customized tour packages to renowned heritage sites in India and across the globe.
+              Sai Shishir Tours is thrilled to announce an exciting Bhutan tour package from Bangalore with a flight included. Join us to explore this small, landlocked country, rich in culture, brimming with uniqueness, filled with mountains and picturesque landscapes and one–of–a–kind cuisine all in a tour that is sure to satisfy. Our carefully crafted Bhutan trip package from Bangalore promises an unforgettable adventure with simplicity and joy. As a Bangalore-based company, we specialize in group and customized tour packages to renowned heritage sites in India and across the globe.
             </p>
             <div className="text-center">
               <button 

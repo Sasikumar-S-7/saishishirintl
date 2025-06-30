@@ -157,21 +157,21 @@ export default function WhyChooseUsSection() {
         {/* Call to Action */}
        <div className="row justify-content-center align-items-center mt-5">
   {/* LEFT COLUMN - Why Choose Bhutan */}
-  <div className="col-12 col-md-6 text-start">
+  <div className="col-12 col-md-6 col-lg-6 text-start">
     <div className={`${styles.ctaSection} p-4 p-md-5 ${isVisible ? styles.fadeInUp : ''}`}>
       <h3 className={`${styles.ctaTitle} mb-4`} style={{ color: '#0b4878' }}>
         Why Choose Bhutan?
       </h3>
       <div className="text-start">
         {[
-          "The world's only carbon-negative country with pristine Himalayan landscapes",
-          "Ancient monasteries and spiritual heritage preserved for centuries",
-          "Full permit and visa assistance with expert local guidance throughout",
-          "Unique Gross National Happiness philosophy experienced firsthand",
-          "Exclusive small-group experiences in an untouched kingdom",
-           "The world's only carbon-negative country with pristine Himalayan landscapes",
-           "Ancient monasteries and spiritual heritage preserved for centuries",
-          "Full permit and visa assistance with expert local guidance throughout"
+         "The world's only carbon-negative country with pristine Himalayan landscapes",
+  "Ancient monasteries and spiritual heritage preserved for centuries", 
+  "Full permit and visa assistance with expert local guidance throughout",
+  "Unique Gross National Happiness philosophy experienced firsthand",
+  "Exclusive small-group experiences in an untouched kingdom",
+  "Trek to the iconic Tiger's Nest Monastery perched on a cliff",
+  "Experience authentic Bhutanese culture through traditional dance and bonfire evenings",
+  "Visit majestic dzongs (fortresses) that serve as centers of religion and administration"
         ].map((point, index) => (
           <div key={index} className="d-flex align-items-start mb-3">
             <div className="me-3 mt-1">
@@ -207,11 +207,13 @@ export default function WhyChooseUsSection() {
   </div>
 
   {/* RIGHT COLUMN - Image */}
-  <div className="col-12 col-md-6">
+  <div className="col-12 col-md-6 col-lg-6">
     <div className="p-3">
       <Image
         src="/bhutan/bhutan-creative-new.webp" // Replace with your actual image path
         alt="Why Choose Bhutan"
+        width={1080}
+        height={1080}
         className="img-fluid rounded shadow"
         style={{ objectFit: 'cover', width: '100%', height: '100%',zIndex:999, }}
       />

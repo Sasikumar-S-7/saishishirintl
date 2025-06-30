@@ -13,7 +13,7 @@ export default function HomePage() {
   style={{
     position: 'relative',
     minHeight: '100vh',
-    backgroundImage: 'url(/full-shot-travel-concept-with-landmarks.jpg)',
+    backgroundImage: 'url(/full-shot-travel-concept-with-landmarks.webp)',
     backgroundSize: 'cover',
     backgroundPosition: 'center',
     backgroundRepeat: 'no-repeat',
@@ -35,12 +35,12 @@ export default function HomePage() {
 
   {/* Content */}
   <div style={{ zIndex: 2 }} className="container px-3">
-    <p className="mt-5 fs-5">
+    <h3 className="mt-5 fs-3">
       This site hosts our marketing landing pages. Each page is designed for a specific audience or campaign.
-    </p>
-    <p className="fs-6">
+    </h3>
+    <h4 className="fs-4">
       If you’ve reached this page directly, you might want to check our main site or wait for a link from our team.
-    </p>
+    </h4>
     <p className="fw-semibold fs-5">-Team Sai Shishir Tours</p>
     <a href="https://saishishirtours.in" className="btn orange-brand-bg-color mt-3 px-4 py-2 fw-semibold">
       Visit Our Site

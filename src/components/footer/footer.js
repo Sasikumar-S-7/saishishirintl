@@ -16,7 +16,7 @@ const Footer = () => {
               src="/Saishishir-logo.webp"
               alt="Sai Shishir Tours"
               className="footer-logo mb-2"
-               width={150}   // adjust as per your layout
+               width={140}   // adjust as per your layout
   height={60}
             />
             <p className="text-muted small mb-0">

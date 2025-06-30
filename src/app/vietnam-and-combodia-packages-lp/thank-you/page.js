@@ -116,7 +116,7 @@ export default function ThankYouPage() {
 
             {/* Action Button */}
             <button 
-              onClick={() => window.location.href = '/'}
+              onClick={() => window.location.href = 'https://saishishirtours.in/'}
               className="btn btn-lg rounded-pill fw-semibold mb-4 px-5 py-3"
               style={{
                 background: 'linear-gradient(135deg, #9333ea, #ec4899)',
@@ -134,7 +134,7 @@ export default function ThankYouPage() {
                 e.target.style.boxShadow = '0 4px 15px rgba(147, 51, 234, 0.3)';
               }}
             >
-              Return Home
+              Visit Our Website
             </button>
 
             {/* Additional Info */}
@@ -142,11 +142,11 @@ export default function ThankYouPage() {
               <p className="text-muted small mb-0">
                 Need help? Contact us at{' '}
                 <a 
-                  href="mailto:support@example.com" 
+                  href="mailto: info@saishishirtours.in" 
                   className="text-decoration-none"
                   style={{ color: '#9333ea' }}
                 >
-                  support@example.com
+                  info@saishishirtours.in
                 </a>
               </p>
             </div>
