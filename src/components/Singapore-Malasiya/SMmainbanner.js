@@ -129,7 +129,7 @@ const CustomCarousel = () => {
       >
         {slides.map((slide) => (
           <Carousel.Item key={slide.id} interval={3000}>
-            <div className="d-block w-100" style={{ height: isMobile ? '650px' : '700px', position: 'relative' }}>
+            <div className="d-block w-100" style={{ height: isMobile ? '700px' : '700px', position: 'relative' }}>
               <Image
                 src={isMobile ? slide.mobileImage : slide.desktopImage}
                 alt={slide.title}
@@ -156,3 +156,8 @@ const CustomCarousel = () => {
 };
 
 export default CustomCarousel;
+
+
+
+
+

@@ -340,7 +340,7 @@ Submission Time: ${new Date().toISOString()}`,
   return (
     <>
       <section>
-        <div className="py-3">
+        <div className="py-md-5">
           <div className="" id='contact'>
             <div className="row justify-content-center">
               <div className="">
@@ -434,7 +434,7 @@ Submission Time: ${new Date().toISOString()}`,
                           </Form.Item>
                         </Col>
 
-                        <Col xs={24}>
+                        {/* <Col xs={24}>
                           <Form.Item name="tour-month">
                             <Select 
                               placeholder="Preferred travel month"
@@ -452,9 +452,9 @@ Submission Time: ${new Date().toISOString()}`,
 
                             </Select>
                           </Form.Item>
-                        </Col>
+                        </Col> */}
 
-                        <Col span={24}>
+                        {/* <Col span={24}>
                           <Form.Item name="your-message">
                             <TextArea 
                               placeholder="Special requests or questions"
@@ -463,7 +463,7 @@ Submission Time: ${new Date().toISOString()}`,
                               style={{ border: 'none', background: 'rgba(240, 240, 240, 0.8)' }}
                             />
                           </Form.Item>
-                        </Col>
+                        </Col> */}
                       </Row>
 
                       <Form.Item name="pageUrl" hidden>

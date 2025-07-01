@@ -15,6 +15,13 @@ import WhyChooseUsSection from '@/components/Whychoosesection'
 
 import React from 'react'
 
+
+// ✅ SEO Metadata
+export const metadata = {
+  title: 'Bhutan Tour Package from Bangalore Enquire Now',
+  description: 'Experience the spiritual charm of Bhutan with Sai Shishir Tours. Our tour package from Bangalore offers majestic monasteries, serene landscapes, and complete travel support.',
+}
+
 const page = () => {
   return (
     <div>

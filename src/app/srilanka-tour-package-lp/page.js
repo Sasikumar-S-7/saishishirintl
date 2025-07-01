@@ -26,6 +26,13 @@ import WhyChooseUsSection from '@/components/Srilanka/SrilankaWhychoosesection'
 
 import React from 'react'
 
+// ✅ SEO Metadata
+export const metadata = {
+  title: 'Sri Lanka Tour Package from Bangalore Landing Page',
+  description: 'Discover the beauty of Sri Lanka with Sai Shishir Tours. This tour package from Bangalore includes scenic landscapes, cultural wonders, luxury stays, and Indian meals.',
+}
+
+
 const page = () => {
   return (
     <div>

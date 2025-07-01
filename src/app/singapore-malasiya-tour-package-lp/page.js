@@ -1,4 +1,3 @@
-
 import Footer from '@/components/footer/footer'
 import Header from '@/components/header/header'
 import KailashBanner from '@/components/Singapore-Malasiya/SMBanner'
@@ -12,16 +11,21 @@ import TourFeatures from '@/components/Singapore-Malasiya/SMTourFeatures'
 import TourInfoTabs from '@/components/Singapore-Malasiya/SMTourInfoTabs'
 import WhyChooseUsSection from '@/components/Singapore-Malasiya/SMWhychoosesection'
 
-
 import React from 'react'
+
+// ✅ SEO Metadata
+export const metadata = {
+  title: 'Singapore Malaysia Tour Package from Bangalore Landing Page',
+  description: 'Explore the best Singapore Malaysia tour package from Bangalore with Sai Shishir Tours. Enjoy premium hotels, sightseeing, Indian meals, and experienced tour guides.',
+}
 
 const page = () => {
   return (
     <div>
-          <Header/>
-          <CustomCarousel/>
-        <Herosection/>
-        <KailashBanner/>
+      <Header/>
+      <CustomCarousel/>
+      <Herosection/>
+      <KailashBanner/>
       <BaliCarousel/>
       {/* <Itinerary/> */}
       {/* <BhutanPackages/> */}

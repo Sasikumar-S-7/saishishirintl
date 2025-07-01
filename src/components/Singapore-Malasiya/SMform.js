@@ -130,7 +130,7 @@ export default function BhutanForm() {
   return (
     <>
     <section >
-      <div  className="py-3">
+      <div  className="py-md-5">
         <div className="" id='contact'>
           <div className="row justify-content-center">
             <div className="">
@@ -226,7 +226,7 @@ export default function BhutanForm() {
                         </Form.Item>
                       </Col>
 
-                      <Col span={24}>
+                      {/* <Col span={24}>
                         <Form.Item name="tour-month">
                           <Select 
                             placeholder="Preferred travel month"
@@ -242,9 +242,9 @@ export default function BhutanForm() {
                             <Select.Option value="Dec 2025">December 2025</Select.Option>
                           </Select>
                         </Form.Item>
-                      </Col>
+                      </Col> */}
 
-                      <Col span={24}>
+                      {/* <Col span={24}>
                         <Form.Item name="your-message">
                           <TextArea 
                             placeholder="Special requests or questions"
@@ -253,7 +253,7 @@ export default function BhutanForm() {
                             style={{ border: 'none', background: 'rgba(240, 240, 240, 0.8)' }}
                           />
                         </Form.Item>
-                      </Col>
+                      </Col> */}
                     </Row>
 
                     {/* Hidden Fields */}
