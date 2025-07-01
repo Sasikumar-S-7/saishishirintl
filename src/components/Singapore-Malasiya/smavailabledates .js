@@ -5,10 +5,11 @@ import React from 'react';
 // Array of month-date data
 const tagData = [
   // { month: 'Sep', date: '11', extra: '31' },
-   { month: 'Sep', date: '11' },
-  { month: 'Oct', date: '07' },
-  { month: 'Nov', date: '01' },
-  { month: 'Dec', date: '23', extra: '29' },
+   { month: 'Aug', date: '06' },
+  { month: 'Sep', date: '05' },
+  { month: 'Oct', date: '11' },
+  { month: 'Nov', date: '10' },
+  { month: 'Dec', date: '09' },
 ];
 
 const MonthDateTags = () => {

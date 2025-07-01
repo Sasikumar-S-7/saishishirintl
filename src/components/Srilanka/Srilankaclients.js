@@ -10,6 +10,7 @@ const BaliCarousel = () => {
   const [fullscreenImage, setFullscreenImage] = useState('');
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
   const [imageDimensions, setImageDimensions] = useState({ width: 0, height: 0 });
+  const [isImageLoading, setIsImageLoading] = useState(true); // New state for loading status
 
   // ✅ Memoize settings to prevent unnecessary recalculations
   const settings = useMemo(() => ({
@@ -58,7 +59,6 @@ const BaliCarousel = () => {
     '/srilanka/client-5.webp',
     '/srilanka/client-6.webp',
     '/srilanka/client-7.webp',
-    
   ], []);
 
   // Function to get actual image dimensions
@@ -76,6 +76,7 @@ const BaliCarousel = () => {
   }, []);
 
   const openFullscreen = useCallback(async (imageSrc, index) => {
+    setIsImageLoading(true); // Set loading state when opening
     setFullscreenImage(imageSrc);
     setCurrentImageIndex(index);
     setIsFullscreen(true);
@@ -92,10 +93,12 @@ const BaliCarousel = () => {
     setCurrentImageIndex(0);
     setImageDimensions({ width: 0, height: 0 });
     document.body.style.overflow = 'unset';
+    setIsImageLoading(false); // Reset loading state
   }, []);
 
   // Navigation functions
   const goToNextImage = useCallback(async () => {
+    setIsImageLoading(true); // Set loading state when changing images
     const nextIndex = (currentImageIndex + 1) % images.length;
     const nextImage = images[nextIndex];
     setCurrentImageIndex(nextIndex);
@@ -107,6 +110,7 @@ const BaliCarousel = () => {
   }, [currentImageIndex, images, getImageDimensions]);
 
   const goToPreviousImage = useCallback(async () => {
+    setIsImageLoading(true); // Set loading state when changing images
     const prevIndex = currentImageIndex === 0 ? images.length - 1 : currentImageIndex - 1;
     const prevImage = images[prevIndex];
     setCurrentImageIndex(prevIndex);
@@ -116,6 +120,11 @@ const BaliCarousel = () => {
     const dimensions = await getImageDimensions(prevImage);
     setImageDimensions(dimensions);
   }, [currentImageIndex, images, getImageDimensions]);
+
+  // Handle image load
+  const handleImageLoad = useCallback(() => {
+    setIsImageLoading(false);
+  }, []);
 
   // Keyboard navigation
   useEffect(() => {
@@ -229,17 +238,23 @@ const BaliCarousel = () => {
             </button>
             
             <div className="fullscreen-image-wrapper" style={displayDimensions}>
+              {isImageLoading && (
+                <div className="loading-indicator">
+                  <div className="spinner"></div>
+                </div>
+              )}
               <Image
                 src={fullscreenImage}
                 alt="Fullscreen view"
                 width={imageDimensions.width}
                 height={imageDimensions.height}
-                className="fullscreen-image"
+                className={`fullscreen-image ${isImageLoading ? 'loading' : 'loaded'}`}
                 style={{
                   width: displayDimensions.width,
                   height: displayDimensions.height,
                   objectFit: 'contain'
                 }}
+                onLoadingComplete={handleImageLoad}
                 priority
               />
             </div>
@@ -366,6 +381,42 @@ const BaliCarousel = () => {
           border-radius: 12px;
           max-width: 100%;
           max-height: 100%;
+          transition: opacity 0.3s ease;
+        }
+
+        .fullscreen-image.loading {
+          opacity: 0;
+        }
+
+        .fullscreen-image.loaded {
+          opacity: 1;
+        }
+
+        .loading-indicator {
+          position: absolute;
+          top: 0;
+          left: 0;
+          right: 0;
+          bottom: 0;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          background: rgba(255, 255, 255, 0.8);
+          z-index: 1;
+        }
+
+        .spinner {
+          width: 40px;
+          height: 40px;
+          border: 4px solid rgba(0, 0, 0, 0.1);
+          border-radius: 50%;
+          border-top: 4px solid #667eea;
+          animation: spin 1s linear infinite;
+        }
+
+        @keyframes spin {
+          0% { transform: rotate(0deg); }
+          100% { transform: rotate(360deg); }
         }
 
         .close-button {

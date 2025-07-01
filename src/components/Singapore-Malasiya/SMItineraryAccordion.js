@@ -28,73 +28,73 @@ const Itinerary = () => {
   const itineraryData = [
   {
     day: 1,
-    date: '15 Dec',
-    title: 'Day 1 | Bagdogra – Phuentsholing',
-    description: "Arrival at Bagdogra International Airport and transfer to Phuentsholing (The Gateway of Bhutan by road from India). Phuentsholing is a thriving commercial center on the northern edge of the Indian Plains. Check-in to the hotel, dinner and overnight stay at Phuentsholing.",
-    sightseeing: [],
-    accommodation: 'Night Stay in Phuentsholing',
-    meals: 'Lunch & Dinner',
-    extras: 'Airport transfer'
+    date: 'Day 1',
+    title: 'Arrival in Singapore',
+    description: "Arrival at Changi International Airport Singapore. Transfer to hotel and check-in. Morning visit to the iconic Temple of Tooth Relic Singapore. Evening experience the exciting Night Safari followed by dinner at Ulu Ulu Safari Restaurant with Indian cuisine.",
+    sightseeing: ['Temple of Tooth Relic Singapore', 'Night Safari'],
+    accommodation: 'Night Stay in Singapore',
+    meals: 'Indian Breakfast, Lunch & Dinner',
+    extras: 'Airport transfer, Night Safari with Indian dinner at Ulu Ulu Safari Restaurant'
   },
   {
     day: 2,
-    date: '16 Dec',
-    title: 'Day 2 | Phuentsholing – Thimphu (170 kms / 6 hr)',
-    description: "Complete immigration formalities and transfer to Thimphu (capital city of Bhutan). Check-in at the hotel, dinner and overnight stay at Thimphu.",
-    sightseeing: ['Kharbhandi Gompa Mandir', 'Waterfall', 'Chuzhom - the confluence of 2 rivers of Paro & Thimphu'],
-    accommodation: 'Night Stay in Thimphu',
-    meals: 'Breakfast, Lunch & Dinner',
-    extras: 'Immigration formalities'
+    date: 'Day 2',
+    title: 'Singapore City Tour & Sentosa Island',
+    description: "Morning explore Singapore's major landmarks on a comprehensive city tour. Afternoon head to Sentosa Island for exciting attractions including SEA Aquarium, Wings of Time show, Madame Tussaud's and scenic Cable Car ride. Evening continue exploring Sentosa before returning to hotel.",
+    sightseeing: ['Singapore City Tour', 'Sentosa Island', 'SEA Aquarium', 'Wings of Time', 'Madame Tussaud\'s', 'Cable Car'],
+    accommodation: 'Night Stay in Singapore',
+    meals: 'Indian Breakfast, Lunch & Dinner',
+    extras: 'Sentosa Island attractions package'
   },
   {
     day: 3,
-    date: '17 Dec',
-    title: 'Day 3 | Thimphu – Punakha – Night Stay Thimphu',
-    description: "After breakfast, drive to Punakha/Wangdue. Stop at Dochu-La-Pass (3150 mts.) for Himalayan views. Afternoon outside photo shoot at Punakha Dzong, built in 1637, named Druk Pungthang Dechen Phodrang (Palace of Great Happiness), winter residence of Je-Khenpo. River rafting at Punakha and visit the Hanging Bridge. Return to Thimphu hotel for dinner and overnight stay.",
-    sightseeing: ['Dochu-La-Pass (3150 mts.)', 'Punakha Dzong', 'Hanging Bridge at Punakha'],
-    accommodation: 'Night Stay in Thimphu',
-    meals: 'Breakfast, Lunch & Dinner',
-    extras: 'River Rafting at Punakha (Additional charges ₹2000/- PP)'
+    date: 'Day 3',
+    title: 'Universal Studios & Gardens by the Bay',
+    description: "Full day at Universal Studios Singapore experiencing thrilling rides and attractions. Evening visit Gardens by the Bay, explore the iconic Supertree Grove and two climate-controlled conservatories. Conclude with the spectacular evening light show at Gardens by the Bay.",
+    sightseeing: ['Universal Studios Singapore', 'Gardens by the Bay', 'Supertree Grove', 'Cloud Forest & Flower Dome', 'Gardens by the Bay Light Show'],
+    accommodation: 'Night Stay in Singapore',
+    meals: 'Indian Breakfast, Lunch & Dinner',
+    extras: 'Universal Studios entry tickets, Gardens by the Bay conservatories'
   },
   {
     day: 4,
-    date: '18 Dec',
-    title: 'Day 4 | Thimphu Local Sightseeing – Night Stay at Paro',
-    description: "After breakfast, explore Thimphu, the capital of Bhutan. Visit Kuensel Phodrang for the Buddha Statue, explore National Memorial Chorten (view from outside only). Afternoon visit Sangaygang ViewPoint and Changangkha Monastery. Enjoy tribal dance (bonfire) at Paro Hotel. Dinner and overnight stay at Paro.",
-    sightseeing: ['Kuensel Phodrang (Buddha Statue)', 'Hindu Temple Below Buddha Point', 'Thimphu View Point', 'Art & Craft Market', 'National Memorial Chorten', 'Sangaygang ViewPoint', 'Changangkha Monastery'],
-    accommodation: 'Night Stay in Paro',
-    meals: 'Breakfast, Lunch & Dinner',
-    extras: 'Tribal dance (bonfire) at Paro Hotel'
+    date: 'Day 4',
+    title: 'Shopping & Transfer to Kuala Lumpur',
+    description: "Morning free time for shopping at Singapore's famous shopping districts. After lunch, check out from hotel and transfer to Kuala Lumpur by comfortable coach. Evening arrival in Kuala Lumpur, check-in to hotel followed by Indian dinner.",
+    sightseeing: ['Singapore Shopping', 'Scenic drive to Kuala Lumpur'],
+    accommodation: 'Night Stay in Kuala Lumpur',
+    meals: 'Indian Breakfast, Lunch & Dinner',
+    extras: 'Coach transfer Singapore to Kuala Lumpur'
   },
   {
     day: 5,
-    date: '19 Dec',
-    title: 'Day 5 | Paro Local Sightseeing',
-    description: "After breakfast visit hiking the Tiger's Nest (those who will not be going to Tiger's Nest can do Paro Shopping – entry free). Lunch followed by local Paro shopping. Overnight stay at Paro.",
-    sightseeing: ['Tiger\'s Nest (Hiking)', 'Paro Local Shopping'],
-    accommodation: 'Night Stay in Paro',
-    meals: 'Breakfast, Lunch & Dinner',
-    extras: 'Local Shopping - 3 Hours'
+    date: 'Day 5',
+    title: 'Kuala Lumpur City Tour',
+    description: "Comprehensive city tour of Kuala Lumpur covering major landmarks. Visit the iconic KL Tower for panoramic city views and photo stop at the world-famous Petronas Twin Towers. Explore the city's colonial architecture, vibrant markets and modern developments.",
+    sightseeing: ['KL Tower', 'Petronas Twin Towers', 'Independence Square', 'National Mosque (exterior)', 'Royal Palace (exterior)', 'Chinatown'],
+    accommodation: 'Night Stay in Kuala Lumpur',
+    meals: 'Indian Breakfast, Lunch & Dinner',
+    extras: 'KL Tower observation deck entry'
   },
   {
     day: 6,
-    date: '20 Dec',
-    title: 'Day 6 | Paro – Che Le La Pass – Phuentsholing (180 kms / 7 hr)',
-    description: "Early morning visit Che Le La Pass, highest motorable peak in Bhutan which mostly will have snow. Breakfast & lunch at Paro. Transfer from Paro to Phuentsholing - a drive of nearly 160 km. Evening proceed to Phuentsholing shopping and return back to the hotel. Dinner and overnight stay at Phuentsholing.",
-    sightseeing: ['Che Le La Pass (Highest Motorable Peak)', 'Phuentsholing Shopping'],
-    accommodation: 'Night Stay in Phuentsholing',
-    meals: 'Breakfast, Lunch & Dinner',
-    extras: 'Evening shopping at Phuentsholing'
+    date: 'Day 6',
+    title: 'Batu Caves & Genting Highlands',
+    description: "Morning visit to the sacred Batu Caves, climb the 272 colorful steps to the temple cave. Continue to Genting Highlands, Malaysia's premier hill resort. Visit a traditional watch factory and enjoy the cool mountain climate. Experience cable car ride and explore the highland attractions.",
+    sightseeing: ['Batu Caves Temple Complex', 'Genting Highlands', 'Genting Skyway Cable Car', 'Watch Factory Visit'],
+    accommodation: 'Night Stay in Kuala Lumpur',
+    meals: 'Indian Breakfast, Lunch & Dinner',
+    extras: 'Genting Highlands cable car, Watch factory tour'
   },
   {
     day: 7,
-    date: '21 Dec',
-    title: 'Day 7 | Phuentsholing – Departure',
-    description: "After breakfast, complete immigration formalities, check out from the hotel, and transfer to Bagdogra International Airport, cherishing the sweet memories of the tour as you bid farewell.",
-    sightseeing: [],
+    date: 'Day 7',
+    title: 'Putrajaya City Tour & Departure',
+    description: "Morning check out from hotel. Visit Putrajaya, Malaysia's administrative capital, known for its modern architecture and beautiful landscapes. Explore the Putra Mosque, Prime Minister's Office, and scenic bridges. After lunch, transfer to Kuala Lumpur International Airport for departure flight, carrying wonderful memories of your Singapore-Malaysia adventure.",
+    sightseeing: ['Putrajaya City Tour', 'Putra Mosque', 'Prime Minister\'s Office', 'Putrajaya Bridge'],
     accommodation: 'Departure',
-    meals: 'Breakfast & Lunch',
-    extras: 'Immigration formalities & Airport transfer'
+    meals: 'Indian Breakfast & Lunch',
+    extras: 'Airport transfer to KLIA'
   }
 ];
 
@@ -307,7 +307,7 @@ const Itinerary = () => {
                         },
                         letterSpacing: '0.5px'
                       }}>
-                        Day {dayData.day} / {dayData.date}
+                        Day {dayData.day} 
                       </div>
                       <div style={{
                         color: '#1f2937',

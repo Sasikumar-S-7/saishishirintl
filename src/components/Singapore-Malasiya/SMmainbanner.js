@@ -27,22 +27,29 @@ const CustomCarousel = () => {
   const slides = [
     {
       id: 1,
-      desktopImage: '/bhutan/bhutan-banner-2.webp',
-      mobileImage: '/bhutan/bhutan-mb-banner-1.webp',
-      title: 'Bhutan Cultural Tour',
-    //   description: 'Experience the rich heritage of Bhutan with our exclusive packages from Bangalore'
+      desktopImage: '/SM/Singapore-&-Malaysia-1.webp',
+      mobileImage: '/SM/Singapore-&-Malaysia-mobile-1.webp',
+      title: 'SM Cultural Tour',
+    //   description: 'Experience the rich heritage of SM with our exclusive packages from Bangalore'
     },
     {
       id: 2,
-      desktopImage: '/bhutan/bhutan-banner-1.webp',
-      mobileImage: '/bhutan/bhutan-mb-banner.webp',
-      title: 'Himalayan Adventures',
+      desktopImage: '/SM/Singapore-&-Malaysia-2.webp',
+      mobileImage: '/SM/Singapore-&-Malaysia-mobile-2.webp',
+      title: ' Adventures',
     //   description: 'Trek through breathtaking landscapes with our expert guides'
     },
     {
       id: 3,
-      desktopImage: '/bhutan/bhutan-banner-3.webp',
-      mobileImage: '/bhutan/bhutan-mb-banner-3.webp',
+      desktopImage: '/SM/Singapore-&-Malaysia-3.webp',
+      mobileImage: '/SM/Singapore-&-Malaysia-mobile-3.webp',
+      title: 'All-Inclusive Packages',
+    //   description: 'Flights, accommodation, meals and sightseeing - we handle it all!'
+    },
+    {
+      id: 4,
+      desktopImage: '/SM/Singapore-&-Malaysia-4.webp',
+      mobileImage: '/SM/Singapore-&-Malaysia-mobile-4.webp',
       title: 'All-Inclusive Packages',
     //   description: 'Flights, accommodation, meals and sightseeing - we handle it all!'
     }

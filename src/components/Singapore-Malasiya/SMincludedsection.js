@@ -25,19 +25,22 @@ const BhutanExperience = ({ onDiscussTripClick }) => {
         <div className="col-lg-10">
           <div className="text-center mb-5">
             <h2 className="fw-bold mb-3" style={{ color: '#0b4878' }}>
-              Whats Included in Your Bhutan Experience?
+Whats Included in This Singapore & Malaysia Holiday Package?
+
             </h2>
             <div className="border-bottom mx-auto" style={{ width: '100px', borderColor: '#ff9f26', borderWidth: '3px' }}></div>
           </div>
 
           <div className="row g-4">
             {[
-              "6-7 day guided cultural and spiritual journey",
-              "Thimphu and Paro exploration with local expert guides",
-              "Tiger's Nest Monastery trek and meditation experiences",
-              "Traditional Bhutanese cultural programs and local interactions",
-              "All permits, visas, and sustainable tourism fees managed for you",
-              "Small group departures available throughout the year"
+             "Return Flights from Bangalore",
+"6 Nights Hotel Stay with Breakfast",
+"Airport Transfers & AC Transport",
+"Sightseeing in Singapore & Malaysia",
+"English-speaking Tour Guide",
+"Visa Assistance for Both Countries",
+"24x7 Travel Support",
+"Flexible Itinerary Customisation"
             ].map((item, index) => (
               <div key={index} className="col-md-6">
                 <div className="d-flex align-items-start p-3 bg-light rounded-3 h-100">
@@ -50,15 +53,43 @@ const BhutanExperience = ({ onDiscussTripClick }) => {
         </div>
       </section>
 
+
+       {/* Section 3: Customizable Packages */}
+      <section className="row justify-content-center my-5 py-5">
+        <div className="col-lg-10 text-center">
+          <h2 className="fw-bold mb-4" style={{ color: '#0b4878' }}>
+We offer customizable Singapore & Malaysia travel packages for families, couples, and groups          </h2>
+          <div className="row g-4 mt-4">
+            {[
+            "Family-friendly Singapore holiday packages",
+"Romantic Malaysia trip packages for couples",
+"Budget Singapore travel packages",
+"Group tour to Singapore & Malaysia",
+"Custom trip to Singapore packages",
+"Package tours from Bangalore to Singapore & Malaysia"
+            ].map((item, index) => (
+              <div key={index} className="col-md-4">
+                <div className="p-4 h-100 rounded-4" style={{ 
+                  backgroundColor: '#f8fafc',
+                  borderLeft: '4px solid #ff9f26'
+                }}>
+                  <p className="mb-0 fw-semibold" style={{ color: '#0b4878' }}>{item}</p>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
       {/* Section 3: Connect with Specialist */}
       <section className="row justify-content-center my-5 py-5 bg-light rounded-4">
         <div className="col-lg-8 text-center">
           <h2 className="fw-bold mb-4" style={{ color: '#0b4878' }}>
-            Connect with a Bhutan Specialist
+Plan Your Tour in Singapore & Malaysia Today!
           </h2>
           <p className="lead mb-5" style={{ color: '#475569' }}>
-            Curious about the Land of the Thunder Dragon?<br />
-            Our Bhutan experts will guide you through permit requirements and craft your perfect Himalayan adventure.
+            Seats Filling Fast – Enquire Now for Best Offers!
+
           </p>
           
           <div className="d-flex flex-column flex-sm-row gap-3 justify-content-center">
@@ -80,7 +111,7 @@ const BhutanExperience = ({ onDiscussTripClick }) => {
                 e.currentTarget.style.boxShadow = 'none';
               }}
             >
-              Discuss Your Bhutan Trip
+             Plan My Singapore & Malaysia Trip
               <ArrowRight className="ms-2" size={20} />
             </button>
             

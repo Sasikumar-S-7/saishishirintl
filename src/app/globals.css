@@ -69,9 +69,7 @@ body {
     font-size: 18px !important;
     
 }
-.package-title {
-  font-size: 85px !important;
-}
+
 }
 
 @media (max-width: 480px) {
@@ -91,9 +89,7 @@ body {
     font-size: 18px !important;
     
 }
-.package-title {
-  font-size: 95px !important;
-}
+
 }
 
 .blue-brand-color {
@@ -185,7 +181,7 @@ body {
 /* Large Mobile Phones (481px - 575px) */
 @media (min-width: 481px) and (max-width: 575.98px) {
   .package-title {
-    font-size: 45px;
+    font-size: 70px;
     letter-spacing: 0px;
   }
 }
@@ -193,7 +189,7 @@ body {
 /* Standard Mobile Phones (361px - 480px) */
 @media (min-width: 361px) and (max-width: 480px) {
   .package-title {
-    font-size: 38px;
+    font-size: 70px;
     letter-spacing: 0px;
   }
 }
@@ -201,7 +197,7 @@ body {
 /* Small Mobile Phones (320px - 360px) */
 @media (max-width: 360px) {
   .package-title {
-    font-size: 32px;
+    font-size: 60px;
     letter-spacing: 0px;
     line-height: 1.2;
   }

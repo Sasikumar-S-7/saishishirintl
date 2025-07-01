@@ -58,7 +58,7 @@ const TourFeatures = () => {
           <div className="row justify-content-center mb-4">
             <div className="col-12 text-center">
               <h1 className="display-5 fw-bold mb-3 blue-brand-color">All Inclusive Tours</h1>
-              <p className="lead orange-brand-color">Your Worry-Free Bhutan Trip!</p>
+              <p className="lead orange-brand-color">Your Worry-Free Singapore & Malasiya Trip!</p>
             </div>
           </div>
           

@@ -1,7 +1,8 @@
 'use client';
 import React, { useState } from 'react';
 import '../../app/KailashBanner.css';
-import Itinerary from '@/components/ItineraryAccordion';
+import Itinerary from './SMItineraryAccordion';
+// import Itinerary from '@/components/ItineraryAccordion';
 
 export default function KailashBanner() {
   const [showItinerary, setShowItinerary] = useState(false);
@@ -15,9 +16,11 @@ export default function KailashBanner() {
       <div className="container">
         <div className="row justify-content-center">
           <div className="col-md-10 col-lg-10">
-            <h2 className="fw-bold mb-3 text-center display-4 fw-bold mb-3 WhyChooseUs-module__AIl1iW__sectionTitle WhyChooseUs-module__AIl1iW__fadeInUp">Bhutan Holiday Packages From Bangalore</h2>
+            <h2 className="fw-bold mb-3 text-center display-4 fw-bold mb-3 WhyChooseUs-module__AIl1iW__sectionTitle WhyChooseUs-module__AIl1iW__fadeInUp">Singapore & Malaysia Travel Package from Bangalore
+</h2>
             <p className="lead text-muted mb-4 text-center">
-              Sai Shishir Tours is thrilled to announce an exciting Bhutan tour package from Bangalore with a flight included. Join us to explore this small, landlocked country, rich in culture, brimming with uniqueness, filled with mountains and picturesque landscapes and one–of–a–kind cuisine all in a tour that is sure to satisfy. Our carefully crafted Bhutan trip package from Bangalore promises an unforgettable adventure with simplicity and joy. As a Bangalore-based company, we specialize in group and customized tour packages to renowned heritage sites in India and across the globe.
+            Explore Two Countries in One Trip – Flights, Hotels & Sightseeing Included!
+Experience the vibrant cityscape of Singapore and the cultural charm of Malaysia in one seamless holiday. Whether youre planning a family vacation, honeymoon, or a group tour to Singapore, this combo package offers the perfect balance of excitement, comfort, and value.
             </p>
             <div className="text-center">
               <button 
@@ -41,7 +44,7 @@ export default function KailashBanner() {
                   e.target.style.boxShadow = '0 4px 15px rgba(255, 159, 38, 0.3)';
                 }}
               >
-                Click for Itinerary
+               Singapore & Malaysia Trip Itinerary
                 <span 
                   style={{
                     position: 'absolute',
@@ -76,7 +79,7 @@ export default function KailashBanner() {
               </button>
             </div>
             <div className="modal-content">
-              <Itinerary />
+              <Itinerary/>
             </div>
           </div>
         </div>

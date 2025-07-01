@@ -4,24 +4,32 @@ import React from 'react';
 const FaqAccordion = ({ onContactSupport }) => {
   const faqItems = [
     {
-      question: 'Do Indians require a visa to visit Bhutan from Bangalore?',
-      answer: 'No, Indians dont need a visa for a Bhutan package from Bangalore. A Voter ID is sufficient, and a passport is not mandatory.',
+      question: '1. What is the duration of the Singapore & Malaysia tour package?',
+      answer: 'The standard itinerary is for 6 nights and 7 days, covering key attractions in both countries.',
     },
     {
-      question: 'Which major attractions in Bhutan does this tour package include?',
-      answer: 'Our Bhutan tour package from Bangalore covers Tigers Nest, DochuLa Pass, Punakha Dzong, Thimphu City, Buddha Point, Gelephu, Gedu, the Hanging Bridge in Punakha, river rafting, the National Museum in Paro, and shopping in Phuentsholing.',
+      question: 'Is the Singapore trip package customizable?',
+      answer: 'Absolutely! You can modify the Singapore travel package to suit your group size, travel dates, and interests.',
     },
     {
-      question: 'Are there any events to attend during the Bhutan tour from Bangalore?',
-      answer: 'Yes, there is the River Rafting event on the Punakha river during the Bhutan tour from Bangalore.',
+      question: 'What are the visa requirements?',
+      answer: 'We provide visa assistance for both Singapore and Malaysia. Requirements include passport copies, photos, and travel details.',
     },
     {
-      question: 'Can I participate in traditional Bhutanese activities in this tour package?',
-      answer: 'Yes, you can participate in traditional Bhutanese activities with this tour package from Bangalore, including Bhutanese dance programs, bonfires, and folk dances.',
+      question: 'What does the Singapore & Malaysia tour package include?',
+      answer: 'It includes flights, hotel stays with breakfast, airport transfers, sightseeing, and guide services.',
     },
     {
-      question: 'What is the best time to visit Bhutan?',
-      answer: 'The best time to visit Bhutan is during the spring (March to May) or autumn (September to November). Spring offers lush greenery and vibrant flowers, while autumn is known for the Thimphu festival and clear mountain views. However, each season has its own charm, so it depends on your preferences. ',
+      question: 'Do you offer group tour to Singapore & Malaysia?',
+      answer: 'Yes, we arrange group tours to Singapore and Malaysia with fixed departures and expert tour leaders. ',
+    },
+     {
+      question: 'What are the top attractions included in the itinerary?',
+      answer: 'The package covers Gardens by the Bay, Sentosa Island, Universal Studios, Petronas Towers, Batu Caves, and Genting Highlands. ',
+    },
+     {
+      question: 'How do I book the package tour from Bangalore to Singapore & Malaysia?',
+      answer: 'You can enquire online or call us directly to get a quote, itinerary, and payment options. ',
     },
   ];
 

@@ -442,7 +442,7 @@ Submission Time: ${new Date().toISOString()}`,
                               style={{ height: '50px', border: 'none', background: 'rgba(240, 240, 240, 0.8)' }}
                               suffixIcon={<CalendarOutlined className="text-primary" />}
                             >
-                           <Select.Option value="June 2025">June 2025</Select.Option>
+                          
                             <Select.Option value="July 2025">July 2025</Select.Option>
                             <Select.Option value="August 2025">August 2025</Select.Option>
                             <Select.Option value="Sep 2025">September 2025</Select.Option>

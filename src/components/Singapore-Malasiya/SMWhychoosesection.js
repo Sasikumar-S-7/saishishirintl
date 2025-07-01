@@ -89,7 +89,7 @@ export default function WhyChooseUsSection() {
   ];
 
   return (
-    <section className={styles.whyChooseSection}>
+    <section className="bg-light">
       <div className="container py-5">
         {/* Header Section */}
         <div className="row justify-content-center text-center mb-5">
@@ -160,18 +160,18 @@ export default function WhyChooseUsSection() {
   <div className="col-12 col-md-6 col-lg-6 text-start">
     <div className={`${styles.ctaSection} p-4 p-md-5 ${isVisible ? styles.fadeInUp : ''}`}>
       <h3 className={`${styles.ctaTitle} mb-4`} style={{ color: '#0b4878' }}>
-        Why Choose Bhutan?
+        Why Choose a Singapore & Malaysia Trip?
+
       </h3>
       <div className="text-start">
         {[
-         "The world's only carbon-negative country with pristine Himalayan landscapes",
-  "Ancient monasteries and spiritual heritage preserved for centuries", 
-  "Full permit and visa assistance with expert local guidance throughout",
-  "Unique Gross National Happiness philosophy experienced firsthand",
-  "Exclusive small-group experiences in an untouched kingdom",
-  "Trek to the iconic Tiger's Nest Monastery perched on a cliff",
-  "Experience authentic Bhutanese culture through traditional dance and bonfire evenings",
-  "Visit majestic dzongs (fortresses) that serve as centers of religion and administration"
+"Iconic Attractions – Visit Marina Bay Sands, Sentosa, Universal Studios & Petronas Towers",
+  "Adventure & Entertainment – Explore Gardens by the Bay, Night Safari, and Genting Highlands", 
+  "Rich Culture & Heritage – Blend of Indian, Malay, and Chinese traditions across both countries",
+  "Shopping Paradise – From Singapore’s Orchard Road to Malaysia’s Bukit Bintang",
+  "Food Lover’s Heaven – Street food, hawker stalls, and fine dining in every city",
+  "Direct Flights from Bangalore – Quick travel with comfort and convenience",
+  "Island Excursions & Nature – Sentosa, Langkawi, Batu Caves & more"
         ].map((point, index) => (
           <div key={index} className="d-flex align-items-start mb-3">
             <div className="me-3 mt-1">
@@ -210,12 +210,12 @@ export default function WhyChooseUsSection() {
   <div className="col-12 col-md-6 col-lg-6">
     <div className="p-3">
       <Image
-        src="/bhutan/bhutan-creative-new.webp" // Replace with your actual image path
-        alt="Why Choose Bhutan"
+         src="/SM/SM-creative.webp" // Replace with your actual image path
+        alt="Why Choose Singapore and Malasiya"
         width={1080}
         height={1080}
         className="img-fluid rounded shadow"
-        style={{ objectFit: 'cover', width: '100%', height: '100%',zIndex:999, }}
+        style={{ objectFit: 'cover', width: '100%', height: '100%', }}
       />
     </div>
   </div>
