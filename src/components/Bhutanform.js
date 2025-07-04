@@ -526,7 +526,7 @@ Submission Time: ${new Date().toISOString()}`,
         </div>
       </section>
 
-      <Modal
+      {/* <Modal
         open={showSuccessModal}
         footer={null}
         closable={false}
@@ -586,7 +586,7 @@ Submission Time: ${new Date().toISOString()}`,
             Continue
           </Button>
         </div>
-      </Modal>
+      </Modal> */}
 
       <style jsx global>{`
         .ant-input, .ant-select-selector, .ant-input-affix-wrapper, .ant-input-number {

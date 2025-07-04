@@ -89,7 +89,7 @@ export default function WhyChooseUsSection() {
   ];
 
   return (
-    <section className={styles.whyChooseSection}>
+    <section className="bg-light">
       <div className="container py-5">
         {/* Header Section */}
         <div className="row justify-content-center text-center mb-5">
@@ -209,7 +209,7 @@ export default function WhyChooseUsSection() {
   {/* RIGHT COLUMN - Image */}
   <div className="col-12 col-md-6 col-lg-6">
     <div className="p-3">
-      <Image
+      <img
         src="/srilanka/srilanka-creative.webp" // Replace with your actual image path
         alt="Why Choose Srilanka"
         width={1080}

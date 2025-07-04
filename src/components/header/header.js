@@ -61,7 +61,7 @@ const Header = () => {
         <div className="container d-flex justify-content-between align-items-center px-3">
           {/* Logo */}
           <div className="logo-wrapper">
-            <Image
+            <img
               src="/Saishishir-logo.webp"
               alt="Sai Shishir Tours Logo"
               width={150}
@@ -71,7 +71,7 @@ const Header = () => {
           </div>
 
           {/* Call Button */}
-          <div>
+          <div className='calldiv'>
             <a href="tel:+918951062993" className="call-button d-flex align-items-center text-dark text-decoration-none">
               <i className="bi bi-telephone-fill me-2"></i>
               <span className="fw-bold">+91 89510 62993</span>

@@ -87,10 +87,8 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
       {/* End Google Tag Manager (noscript) */}
       
       <div 
-        className="min-vh-100 d-flex align-items-center justify-content-center px-4"
-        style={{
-          background: 'linear-gradient(135deg, #9333ea 0%, #ec4899 50%, #ef4444 100%)'
-        }}
+        className="min-vh-100 d-flex align-items-center bg-background  justify-content-center px-4"
+        
       >
         <div className="col-12 col-md-8 col-lg-6 col-xl-4">
           <div className="card shadow-lg border-0 rounded-4">
@@ -107,8 +105,8 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
               </div>
 
               {/* Main Message */}
-              <h1 className="display-5 fw-bold text-dark mb-4">
-                Thank You! 🎉
+              <h1 className="display-5 fw-bold blue-brand-color mb-4">
+                Thank You! 
               </h1>
               
               <p className="text-muted mb-4 fs-5">
@@ -141,24 +139,42 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
               {/* Action Button */}
               <button 
                 onClick={() => window.location.href = 'https://saishishirtours.in/'}
-                className="btn btn-lg rounded-pill fw-semibold mb-4 px-5 py-3"
+              
+                className="btn btn-lg px-5 py-3 rounded-pill fw-semibold"
                 style={{
-                  background: 'linear-gradient(135deg, #9333ea, #ec4899)',
+                  backgroundColor: '#ff9f26',
                   border: 'none',
                   color: 'white',
-                  boxShadow: '0 4px 15px rgba(147, 51, 234, 0.3)',
-                  transition: 'all 0.2s ease'
+                  boxShadow: '0 4px 15px rgba(255, 159, 38, 0.3)',
+                  transition: 'all 0.3s ease',
+                  position: 'relative',
+                  overflow: 'hidden'
                 }}
-                onMouseOver={(e) => {
-                  e.target.style.transform = 'scale(1.05)';
-                  e.target.style.boxShadow = '0 6px 20px rgba(147, 51, 234, 0.4)';
+                onMouseEnter={(e) => {
+                  e.target.style.transform = 'translateY(-3px)';
+                  e.target.style.boxShadow = '0 7px 20px rgba(255, 159, 38, 0.4)';
                 }}
-                onMouseOut={(e) => {
-                  e.target.style.transform = 'scale(1)';
-                  e.target.style.boxShadow = '0 4px 15px rgba(147, 51, 234, 0.3)';
+                onMouseLeave={(e) => {
+                  e.target.style.transform = 'translateY(0)';
+                  e.target.style.boxShadow = '0 4px 15px rgba(255, 159, 38, 0.3)';
                 }}
               >
-                Visit Our Website
+               Visit Our Website
+                <span 
+                  style={{
+                    position: 'absolute',
+                    top: '50%',
+                    left: '50%',
+                    width: '5px',
+                    height: '5px',
+                    backgroundColor: 'rgba(255,255,255,0.5)',
+                    opacity: '0',
+                    borderRadius: '100%',
+                    transform: 'scale(1, 1) translate(-50%)',
+                    transformOrigin: '50% 50%',
+                    transition: 'all 0.3s ease'
+                  }}
+                />
               </button>
 
               {/* Additional Info */}

@@ -1,6 +1,7 @@
 import Footer from '@/components/footer/footer'
 import Header from '@/components/header/header'
 import KailashBanner from '@/components/Singapore-Malasiya/SMBanner'
+import SMBelowBanner from '@/components/Singapore-Malasiya/SMBelowbanner'
 import BaliCarousel from '@/components/Singapore-Malasiya/SMclients'
 import FaqAccordion from '@/components/Singapore-Malasiya/SMFaqAccordion'
 import Herosection from '@/components/Singapore-Malasiya/SMherosection'
@@ -34,6 +35,7 @@ const page = () => {
       <BhutanExperience/>
       <TourInfoTabs/>
       <TestimonialsSection/>
+      <SMBelowBanner/>
       <FaqAccordion/>
       <Footer/>
     </div>

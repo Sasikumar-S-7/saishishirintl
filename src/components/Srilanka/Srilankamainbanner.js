@@ -7,24 +7,19 @@ const CustomCarousel = () => {
   const [isMobile, setIsMobile] = useState(false);
 
   useEffect(() => {
-    // Check if window is defined (client-side)
     if (typeof window !== 'undefined') {
       const handleResize = () => {
         setIsMobile(window.innerWidth < 768);
       };
       
-      // Set initial value
       handleResize();
-      
-      // Add event listener
       window.addEventListener('resize', handleResize);
       
-      // Clean up
       return () => window.removeEventListener('resize', handleResize);
     }
   }, []);
 
-  const slides = [
+ const slides = [
     {
       id: 1,
       desktopImage: '/srilanka/Srilanka-1.webp',
@@ -55,6 +50,7 @@ const CustomCarousel = () => {
     }
   ];
 
+
   return (
     <div className="responsive-carousel">
       <style jsx>{`
@@ -77,46 +73,47 @@ const CustomCarousel = () => {
           width: 40px;
           height: 40px;
         }
-        .carousel-caption {
-          background: rgba(11, 72, 120, 0.7);
-          border-radius: 15px;
-          padding: 20px;
-          bottom: 30%;
-          left: 50%;
-          transform: translateX(-50%);
-          width: 80%;
-          max-width: 800px;
+        
+        /* Full image display styles */
+        .carousel-item {
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          background-color: #000;
         }
-        .carousel-caption h2, 
-        .carousel-caption h3 {
-          color: #ff9f26;
-          font-weight: 700;
-          margin-bottom: 15px;
+        
+        .image-container {
+          width: 100%;
+          height: 100%;
+          display: flex;
+          justify-content: center;
+          align-items: center;
         }
-        .carousel-caption p {
-          font-size: 1.1rem;
-          margin-bottom: 0;
+        
+        .image-container img {
+        margin-top:40px;
+         
+          width: 100%;
+          height: 100%;
+          object-fit: cover;
         }
         
         @media (max-width: 768px) {
-          .carousel-caption {
-            bottom: 20%;
-            width: 90%;
-            padding: 15px;
+          .carousel-item {
+            height: 700px;
           }
-          .carousel-caption h2,
-          .carousel-caption h3 {
-            font-size: 1.5rem;
-            margin-bottom: 10px;
-          }
-          .carousel-caption p {
-            font-size: 0.9rem;
-          }
+          
           .carousel-control-prev-icon,
           .carousel-control-next-icon {
             padding: 10px;
             width: 30px;
             height: 30px;
+          }
+        }
+        
+        @media (min-width: 769px) {
+          .carousel-item {
+            height: 700px;
           }
         }
       `}</style>
@@ -129,25 +126,19 @@ const CustomCarousel = () => {
       >
         {slides.map((slide) => (
           <Carousel.Item key={slide.id} interval={3000}>
-            <div className="d-block w-100" style={{ height: isMobile ? '650px' : '700px', position: 'relative' }}>
-              <Image
+            <div className="image-container">
+              <img
                 src={isMobile ? slide.mobileImage : slide.desktopImage}
                 alt={slide.title}
-                fill
-                style={{ objectFit: 'cover' }}
-                quality={100}
-                priority={slide.id === 1} // Lazy load except first image
-                sizes="(max-width: 768px) 100vw, (max-width: 1200px) 100vw, 100vw"
+                style={{ 
+                
+                  width: '100%',
+                  height: '100%',
+                  objectFit: 'cover'
+                }}
+                loading={slide.id === 1 ? 'eager' : 'lazy'}
               />
             </div>
-            {/* <Carousel.Caption>
-              {slide.id === 1 ? (
-                <h2>{slide.title}</h2>
-              ) : (
-                <h3>{slide.title}</h3>
-              )}
-              <p>{slide.description}</p>
-            </Carousel.Caption> */}
           </Carousel.Item>
         ))}
       </Carousel>

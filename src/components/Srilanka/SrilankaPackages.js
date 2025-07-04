@@ -1,7 +1,7 @@
 'use client';
 
 import React from 'react';
-import '../../app/bhutanpackage.css';
+// import '../../app/bhutanpackage.css';
 import Image from "next/image";
 
 const packages = [
@@ -52,7 +52,7 @@ export default function SriLankaPackages() {
         {packages.map((item, i) => (
           <div key={i} className="col-12 col-sm-6 col-md-4 col-lg-3">
             <div className="package-card">
-              <Image src={item.image} alt={item.title} className="card-img-top" width={500} height={400} />
+              <img src={item.image} alt={item.title} className="card-img-top" width={500} height={400} />
               <div className="package-info">
                 <h6 className="package-titles">{item.title}</h6>
                 <p className="package-nights fw-bold ">{item.nights}</p>

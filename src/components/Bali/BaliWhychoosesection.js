@@ -209,7 +209,7 @@ export default function WhyChooseUsSection() {
   {/* RIGHT COLUMN - Image */}
   <div className="col-12 col-md-6 col-lg-6">
     <div className="p-3">
-      <Image
+      <img
         src="/bhutan/bhutan-creative-new.webp" // Replace with your actual image path
         alt="Why Choose Bhutan"
         width={1080}

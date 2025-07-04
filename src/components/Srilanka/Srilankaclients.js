@@ -3,14 +3,13 @@ import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
 import React, { useState, useCallback, useEffect, useMemo } from 'react';
 import Slider from 'react-slick';
-import Image from 'next/image';
 
 const BaliCarousel = () => {
   const [isFullscreen, setIsFullscreen] = useState(false);
   const [fullscreenImage, setFullscreenImage] = useState('');
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
   const [imageDimensions, setImageDimensions] = useState({ width: 0, height: 0 });
-  const [isImageLoading, setIsImageLoading] = useState(true); // New state for loading status
+  const [isImageLoading, setIsImageLoading] = useState(true);
 
   // ✅ Memoize settings to prevent unnecessary recalculations
   const settings = useMemo(() => ({
@@ -51,7 +50,7 @@ const BaliCarousel = () => {
   }), []);
 
   // ✅ Memoize images array to prevent unnecessary recreations
-  const images = useMemo(() => [
+   const images = useMemo(() => [
     '/srilanka/client-1.webp',
     '/srilanka/client-2.webp',
     '/srilanka/client-3.webp',
@@ -76,13 +75,12 @@ const BaliCarousel = () => {
   }, []);
 
   const openFullscreen = useCallback(async (imageSrc, index) => {
-    setIsImageLoading(true); // Set loading state when opening
+    setIsImageLoading(true);
     setFullscreenImage(imageSrc);
     setCurrentImageIndex(index);
     setIsFullscreen(true);
     document.body.style.overflow = 'hidden';
     
-    // Get actual image dimensions
     const dimensions = await getImageDimensions(imageSrc);
     setImageDimensions(dimensions);
   }, [getImageDimensions]);
@@ -93,38 +91,39 @@ const BaliCarousel = () => {
     setCurrentImageIndex(0);
     setImageDimensions({ width: 0, height: 0 });
     document.body.style.overflow = 'unset';
-    setIsImageLoading(false); // Reset loading state
+    setIsImageLoading(false);
   }, []);
 
-  // Navigation functions
   const goToNextImage = useCallback(async () => {
-    setIsImageLoading(true); // Set loading state when changing images
+    setIsImageLoading(true);
     const nextIndex = (currentImageIndex + 1) % images.length;
     const nextImage = images[nextIndex];
     setCurrentImageIndex(nextIndex);
     setFullscreenImage(nextImage);
     
-    // Get dimensions for new image
     const dimensions = await getImageDimensions(nextImage);
     setImageDimensions(dimensions);
   }, [currentImageIndex, images, getImageDimensions]);
 
   const goToPreviousImage = useCallback(async () => {
-    setIsImageLoading(true); // Set loading state when changing images
+    setIsImageLoading(true);
     const prevIndex = currentImageIndex === 0 ? images.length - 1 : currentImageIndex - 1;
     const prevImage = images[prevIndex];
     setCurrentImageIndex(prevIndex);
     setFullscreenImage(prevImage);
     
-    // Get dimensions for new image
     const dimensions = await getImageDimensions(prevImage);
     setImageDimensions(dimensions);
   }, [currentImageIndex, images, getImageDimensions]);
 
-  // Handle image load
   const handleImageLoad = useCallback(() => {
     setIsImageLoading(false);
   }, []);
+
+  const handleImageError = useCallback(() => {
+    console.error('Error loading image:', fullscreenImage);
+    setIsImageLoading(false);
+  }, [fullscreenImage]);
 
   // Keyboard navigation
   useEffect(() => {
@@ -156,16 +155,15 @@ const BaliCarousel = () => {
     };
   }, [isFullscreen, goToNextImage, goToPreviousImage, closeFullscreen]);
 
-  // Calculate display dimensions (actual size but constrained to viewport)
+  // Calculate display dimensions
   const getDisplayDimensions = useCallback(() => {
-    if (!imageDimensions.width || !imageDimensions.height) return {};
+    if (!imageDimensions.width || !imageDimensions.height) return { width: '80vw', height: '80vh' };
     
     const maxWidth = window.innerWidth * 0.9;
     const maxHeight = window.innerHeight * 0.85;
     
     let { width, height } = imageDimensions;
     
-    // If image is larger than viewport, scale it down while maintaining aspect ratio
     if (width > maxWidth || height > maxHeight) {
       const widthRatio = maxWidth / width;
       const heightRatio = maxHeight / height;
@@ -193,13 +191,10 @@ const BaliCarousel = () => {
                 className="image-wrapper"
                 onClick={() => openFullscreen(src, index)}
               >
-                <Image
+                <img
                   src={src}
                   alt={`Slide ${index + 1}`}
-                  fill
                   className="carousel-img"
-                  sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-                  priority
                 />
                 <div className="hover-overlay">
                   <div className="zoom-icon">🔍</div>
@@ -214,12 +209,10 @@ const BaliCarousel = () => {
       {isFullscreen && (
         <div className="fullscreen-modal" onClick={closeFullscreen}>
           <div className="fullscreen-content" onClick={(e) => e.stopPropagation()}>
-            {/* Close button */}
             <button className="close-button" onClick={closeFullscreen}>
               ✕
             </button>
             
-            {/* Previous button */}
             <button 
               className="nav-button nav-button-prev" 
               onClick={goToPreviousImage}
@@ -228,7 +221,6 @@ const BaliCarousel = () => {
               ‹
             </button>
             
-            {/* Next button */}
             <button 
               className="nav-button nav-button-next" 
               onClick={goToNextImage}
@@ -243,28 +235,24 @@ const BaliCarousel = () => {
                   <div className="spinner"></div>
                 </div>
               )}
-              <Image
+              <img
                 src={fullscreenImage}
                 alt="Fullscreen view"
-                width={imageDimensions.width}
-                height={imageDimensions.height}
                 className={`fullscreen-image ${isImageLoading ? 'loading' : 'loaded'}`}
                 style={{
                   width: displayDimensions.width,
                   height: displayDimensions.height,
                   objectFit: 'contain'
                 }}
-                onLoadingComplete={handleImageLoad}
-                priority
+                onLoad={handleImageLoad}
+                onError={handleImageError}
               />
             </div>
             
-            {/* Image counter */}
             <div className="image-counter">
               {currentImageIndex + 1} / {images.length}
             </div>
             
-            {/* Keyboard hint */}
             <div className="keyboard-hint">
               Use ← → arrow keys or click buttons to navigate • ESC to close
             </div>
@@ -272,15 +260,17 @@ const BaliCarousel = () => {
         </div>
       )}
 
+      
+
       {/* Scoped styles */}
       <style jsx>{`
         .image-wrapper {
           position: relative;
           width: 100%;
-          padding-top: 85%; /* 4:3 aspect ratio */
+          // padding-top: 85%; /* 4:3 aspect ratio */
           overflow: hidden;
           border-radius: 16px;
-          box-shadow: 0 8px 32px rgba(0, 0, 0, 0.12);
+          // box-shadow: 0 8px 32px rgba(0, 0, 0, 0.12);
           cursor: pointer;
           transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
           background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
@@ -295,7 +285,13 @@ const BaliCarousel = () => {
           object-fit: cover;
           transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
           border-radius: 16px;
-          height: auto;
+          width:100%;
+          height: 400px;
+        }
+           .carousel-img img {
+          object-fit: cover;
+          height: 400px;
+          
         }
 
         .hover-overlay {
@@ -461,7 +457,7 @@ const BaliCarousel = () => {
           display: flex;
           align-items: center;
           justify-content: center;
-          z-index: 10001;
+          z-index: 1000;
           transition: all 0.3s ease;
           backdrop-filter: blur(10px);
           color: #333;
@@ -524,7 +520,7 @@ const BaliCarousel = () => {
         :global(.slick-next) {
           width: 50px;
           height: 50px;
-          z-index: 10;
+          z-index: 2;
         }
 
         :global(.slick-prev:before),
@@ -544,9 +540,9 @@ const BaliCarousel = () => {
 
         /* Responsive Design */
         @media (max-width: 1024px) {
-          .image-wrapper {
-            padding-top: 80%;
-          }
+          // .image-wrapper {
+          //   padding-top: 80%;
+          // }
           
           :global(.slick-prev) {
             left: -20px;
@@ -567,7 +563,7 @@ const BaliCarousel = () => {
 
         @media (max-width: 768px) {
           .image-wrapper {
-            padding-top: 85%;
+            // padding-top: 85%;
             border-radius: 12px;
           }
 
@@ -600,7 +596,7 @@ const BaliCarousel = () => {
           .image-counter {
             bottom: -45px;
             font-size: 13px;
-            padding: 6px 14px;
+            padding: 6px 0px;
           }
 
           .keyboard-hint {
@@ -630,7 +626,7 @@ const BaliCarousel = () => {
 
         @media (max-width: 480px) {
           .image-wrapper {
-            padding-top: 90%;
+            // padding-top: 90%;
             border-radius: 10px;
           }
 

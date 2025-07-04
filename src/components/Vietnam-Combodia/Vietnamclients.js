@@ -184,7 +184,7 @@ const BaliCarousel = () => {
                 className="image-wrapper"
                 onClick={() => openFullscreen(src, index)}
               >
-                <Image
+                <img
                   src={src}
                   alt={`Slide ${index + 1}`}
                   fill
@@ -229,7 +229,7 @@ const BaliCarousel = () => {
             </button>
             
             <div className="fullscreen-image-wrapper" style={displayDimensions}>
-              <Image
+              <img
                 src={fullscreenImage}
                 alt="Fullscreen view"
                 width={imageDimensions.width}

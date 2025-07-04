@@ -65,21 +65,25 @@ export default function KailashBanner() {
 
       {/* Itinerary Modal/Popup */}
       {showItinerary && (
-        <div className="modal-overlay">
-          <div className="modal-container">
-            <div className="modal-header">
-              <button 
-                className="modal-close-btn"
-                onClick={toggleItinerary}
-              >
-                &times;
-              </button>
-            </div>
-            <div className="modal-content">
-              <Itinerary />
-            </div>
-          </div>
-        </div>
+       <div style={{
+                    // marginTop:'20px',
+                  }} className="position-fixed top-0 start-0 w-100 h-100 bg-dark bg-opacity-50 d-flex justify-content-center align-items-center z-3">
+  <div className="bg-white rounded shadow w-100 w-md-75 w-lg-50 h-100 h-md-auto overflow-auto">
+    
+    <div className="d-flex justify-content-end border-bottom p-3">
+      <button 
+        className="btn-close" 
+        aria-label="Close" 
+        onClick={toggleItinerary}
+      ></button>
+    </div>
+    
+    <div className="p-3">
+      <Itinerary />
+    </div>
+    
+  </div>
+</div>
       )}
     </div>
   );
